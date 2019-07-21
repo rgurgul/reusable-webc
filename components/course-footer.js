@@ -15,7 +15,12 @@ class CourseFooter extends HTMLElement {
 
         const style = document.createElement('style')
         style.textContent = `
-        footer{border: 1px solid; padding: 10px;}
+        footer{
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
         *{font-family: sans-serif}`
         this.shadow.appendChild(style);
     }
