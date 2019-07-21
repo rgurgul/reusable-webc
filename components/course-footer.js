@@ -17,6 +17,7 @@ class CourseFooter extends HTMLElement {
         style.textContent = `
         footer{
             border: 1px solid rgba(0, 0, 0, 0.125);
+            color: black;
             padding: 10px;
             background: #f8f9fa;
             border-radius: 4px;
