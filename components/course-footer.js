@@ -4,8 +4,9 @@ class CourseFooter extends HTMLElement {
     }
     constructor() {
         super();
-        this.shadow = this.attachShadow({ mode: 'open' });
-        this.shadow.innerHTML = `
+        this.attachShadow({ mode: 'open' });
+
+        this.shadowRoot.innerHTML = `
          <footer>
             <div> Jeżeli szkolenie było OK, zapraszam do moich kontaktów na
                 <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>.
@@ -23,13 +24,13 @@ class CourseFooter extends HTMLElement {
             border-radius: 4px;
         }
         *{font-family: sans-serif}`
-        this.shadow.appendChild(style);
+        this.shadowRoot.appendChild(style);
     }
 
     courses() {
         const container = document.createElement('div');
         container.classList.add('courses');
-        this.shadow.querySelector('footer').appendChild(container);
+        this.shadowRoot.querySelector('footer').appendChild(container);
         fetch('https://urgu.pl/api/courses')
             .then((resp) => resp.json())
             .then((resp) => {
