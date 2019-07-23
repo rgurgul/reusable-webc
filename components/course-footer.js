@@ -8,9 +8,9 @@ class CourseFooter extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
          <footer>
-            <div> Jeżeli szkolenie było OK, zapraszam do moich kontaktów na
+            <div> Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
                 <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>.
-                Dodaj skila i opinię o szkoleniu.</div>
+                Dodaj <b>skila i opinię</b> o szkoleniu.</div>
         </footer>
          `;
 
@@ -20,10 +20,15 @@ class CourseFooter extends HTMLElement {
             border: 1px solid rgba(0, 0, 0, 0.125);
             color: black;
             padding: 10px;
-            background: #f8f9fa;
+            background: #fff7e5;
             border-radius: 4px;
         }
-        *{font-family: sans-serif}`
+        footer a {
+            color: #DC461D;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        *{font-family: sans-serif; font-size: 15px;}`
         this.shadowRoot.appendChild(style);
     }
 
