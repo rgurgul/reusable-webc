@@ -28,6 +28,12 @@ class CourseFooter extends HTMLElement {
             text-decoration: none;
             cursor: pointer;
         }
+        footer ul {
+            padding: 0; margin: 0
+        }
+        footer ul li {
+            display: inline-block;
+        }
         *{font-family: sans-serif; font-size: 15px;}`
         this.shadowRoot.appendChild(style);
     }
@@ -42,9 +48,9 @@ class CourseFooter extends HTMLElement {
                 container.innerHTML = `
                 <br>
                 <div>List wszystkich szkoleń:</div>
-                <ul style="padding: 0; margin: 0;">
+                <ul>
                 ${resp.map((item, idx) => `
-                    <li style="display: inline-block;">
+                    <li>
                         <a href='https://debugger.pl/szkolenie-${item.name}' target='_blank'>
                         ${item.name.charAt(0).toUpperCase() + item.name.slice(1).replace(/-[\w]/g, (val, idx, str) => {
                     const result = str.charAt(idx + 2) !== '-' ? val.charAt(1).toUpperCase() : val.charAt(1);
