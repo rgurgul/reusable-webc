@@ -38,7 +38,7 @@ class CourseFooter extends HTMLElement {
         }
         footer ul li {
             list-style-type: none;
-            margin-bottom: 3px;
+            line-height: 22px;
         }
         h3 {
             margin: 0;
