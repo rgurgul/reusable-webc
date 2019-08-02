@@ -8,9 +8,12 @@ class CourseFooter extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
          <footer>
-            <div> Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
+            <div class="linkedin">
+                <h3>Podziel się opinią o szkoleniu.</h3>
+                <br>
+                Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
                 <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>.
-                Dodaj <b>skila i opinię</b> o szkoleniu.</div>
+                </div>
         </footer>
          `;
 
@@ -18,23 +21,38 @@ class CourseFooter extends HTMLElement {
         style.textContent = `
         footer{
             border: 1px solid rgba(0, 0, 0, 0.125);
-            color: black;
-            padding: 10px;
-            background: #fff7e5;
+            color: white;
+            padding: 20px;
+            background: #606060;
             border-radius: 4px;
+            display: flex;
+            flex-wrap: wrap;
         }
         footer a {
-            color: #DC461D;
-            text-decoration: none;
+            color: white;
+            font-weight: bold;
             cursor: pointer;
         }
         footer ul {
-            padding: 0; margin: 0
+            padding: 0; margin: 0;
         }
         footer ul li {
-            display: inline-block;
+            list-style-type: none;
+            margin-bottom: 3px;
         }
-        *{font-family: sans-serif; font-size: 15px;}`
+        h3 {
+            margin: 0;
+        }
+        *{
+            font-family: sans-serif;
+        }
+        .linkedin, .courses{
+            margin: 0 10px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        `
         this.shadowRoot.appendChild(style);
     }
 
@@ -46,20 +64,25 @@ class CourseFooter extends HTMLElement {
             .then((resp) => resp.json())
             .then((resp) => {
                 container.innerHTML = `
-                <br>
-                <div>List wszystkich szkoleń:</div>
-                <ul>
-                ${resp.map((item, idx) => `
-                    <li>
-                        <a href='https://debugger.pl/szkolenie-${item.name}' target='_blank'>
-                        ${item.name.charAt(0).toUpperCase() + item.name.slice(1).replace(/-[\w]/g, (val, idx, str) => {
-                    const result = str.charAt(idx + 2) !== '-' ? val.charAt(1).toUpperCase() : val.charAt(1);
-                    return ' ' + result;
-                })}</a>
-                        ${resp.length - 1 - idx ? '|' : ''}
-                    </li>
-                `).join('')}
-                </ul>`
+
+                <div class="courses">
+                    <h3>List wszystkich szkoleń</h3>
+                    <br>
+                    <ul>
+                    ${resp.map((item, idx) => `
+                        <li>
+                            <a href='https://debugger.pl/szkolenie-${item.name}' target='_blank'>
+                            ${item.name.charAt(0).toUpperCase() + item.name.slice(1).replace(/-[\w]/g, (val, idx, str) => {
+                                const result = str.charAt(idx + 2) !== '-' ? val.charAt(1).toUpperCase() : val.charAt(1);
+                                return ' ' + result;
+                            })}</a>
+
+                        </li>
+                    `).join('')}
+                    </ul>
+                </div>
+
+                `
             })
     }
 
