@@ -20,7 +20,7 @@ class CourseFooter extends HTMLElement {
         const style = document.createElement('style')
         style.textContent = `
         footer{
-            border: 1px solid rgba(0, 0, 0, 0.125);
+            border: 1px solid #999;
             color: white;
             padding: 50px 0;
 
