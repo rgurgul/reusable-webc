@@ -33,15 +33,14 @@ class CourseFooter extends HTMLElement {
             color: white;
             font-weight: bold;
             cursor: pointer;
-            text-decoration: none;
         }
         footer ul {
             margin: 0;
-            padding: 0 20px;
+            padding: 0;
         }
         footer ul li {
-
             line-height: 25px;
+            display: inline-block;
         }
 
         h3 {
@@ -80,7 +79,7 @@ class CourseFooter extends HTMLElement {
                                 const result = str.charAt(idx + 2) !== '-' ? val.charAt(1).toUpperCase() : val.charAt(1);
                                 return ' ' + result;
                             })}</a>
-
+                            ${idx !== resp.length - 1 ? '•' : ''}
                         </li>
                     `).join('')}
                     </ul>
