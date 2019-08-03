@@ -22,7 +22,7 @@ class CourseFooter extends HTMLElement {
         footer{
             border: 1px solid #999;
             color: white;
-            padding: 50px 0;
+            padding: 50px;
             background: #606060;
             border-radius: 4px;
             display: flex;
@@ -52,10 +52,18 @@ class CourseFooter extends HTMLElement {
         *{
             font-family: sans-serif;
         }
-        .linkedin, .courses, .contact{
-            margin: 0 40px;
+        .linkedin, .courses{
             flex: 1;
-            min-width: 0;
+        }
+
+        @media screen and (max-width: 600px) {
+            footer {
+                flex-direction: column;
+            }
+            .linkedin, .courses {
+                flex-basis: auto;
+                margin-top: 20px;
+            }
         }
 
         `
