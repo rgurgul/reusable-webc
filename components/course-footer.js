@@ -7,14 +7,14 @@ class CourseFooter extends HTMLElement {
         this.attachShadow({ mode: 'open' });
 
         this.shadowRoot.innerHTML = `
-         <footer>
-            <div class="linkedin">
-                <h3>Podziel się opinią o szkoleniu.</h3>
-                <br>
-                Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
-                <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>.
+            <footer>
+                <div class="linkedin">
+                    <h3>Podziel się opinią o szkoleniu.</h3>
+                    <br>
+                    Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
+                    <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>.
                 </div>
-        </footer>
+            </footer>
          `;
 
         const style = document.createElement('style')
@@ -22,7 +22,8 @@ class CourseFooter extends HTMLElement {
         footer{
             border: 1px solid rgba(0, 0, 0, 0.125);
             color: white;
-            padding: 20px;
+            padding: 50px 0;
+
             background: #606060;
             border-radius: 4px;
             display: flex;
@@ -32,22 +33,25 @@ class CourseFooter extends HTMLElement {
             color: white;
             font-weight: bold;
             cursor: pointer;
+            text-decoration: none;
         }
         footer ul {
-            padding: 0; margin: 0;
+            margin: 0;
+            padding: 0 20px;
         }
         footer ul li {
-            list-style-type: none;
-            line-height: 22px;
+
+            line-height: 25px;
         }
+
         h3 {
             margin: 0;
         }
         *{
             font-family: sans-serif;
         }
-        .linkedin, .courses{
-            margin: 0 10px;
+        .linkedin, .courses, .contact{
+            margin: 0 40px;
             flex: 1;
             min-width: 0;
         }
