@@ -12,7 +12,7 @@ class CourseFooter extends HTMLElement {
                     <h3>Podziel się opinią o szkoleniu.</h3>
                     <br>
                     Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
-                    <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>.
+                    <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>
                 </div>
             </footer>
          `;
@@ -23,7 +23,6 @@ class CourseFooter extends HTMLElement {
             border: 1px solid #999;
             color: white;
             padding: 50px 0;
-
             background: #606060;
             border-radius: 4px;
             display: flex;
@@ -33,13 +32,17 @@ class CourseFooter extends HTMLElement {
             color: white;
             font-weight: bold;
             cursor: pointer;
+            text-decoration: none;
+            border: 2px solid;
+            padding: 4px 6px;
+            line-height: 36px;
         }
         footer ul {
             margin: 0;
             padding: 0;
+            list-style: none;
         }
         footer ul li {
-            line-height: 25px;
             display: inline-block;
         }
 
@@ -79,7 +82,6 @@ class CourseFooter extends HTMLElement {
                                 const result = str.charAt(idx + 2) !== '-' ? val.charAt(1).toUpperCase() : val.charAt(1);
                                 return ' ' + result;
                             })}</a>
-                            ${idx !== resp.length - 1 ? '•' : ''}
                         </li>
                     `).join('')}
                     </ul>
