@@ -11,7 +11,7 @@ class CourseFooter extends HTMLElement {
                 <div class="linkedin">
                     <h3>Podziel się opinią o szkoleniu.</h3>
                     <br>
-                    Jeżeli szkolenie było <b>OK</b>, zapraszam do moich kontaktów na
+                    Jeżeli szkolenie było <b>OK</b>, zapraszam Cię do moich kontaktów na
                     <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>
                 </div>
             </footer>
