@@ -55,7 +55,6 @@ class CourseFooter extends HTMLElement {
         .linkedin, .courses{
             flex: 1;
         }
-
         @media screen and (max-width: 600px) {
             footer {
                 flex-direction: column;
