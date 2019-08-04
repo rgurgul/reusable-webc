@@ -64,7 +64,6 @@ class CourseFooter extends HTMLElement {
                 margin-top: 20px;
             }
         }
-
         `
         this.shadowRoot.appendChild(style);
     }
