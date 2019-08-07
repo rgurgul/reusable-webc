@@ -78,7 +78,7 @@ class CourseFooter extends HTMLElement {
                 container.innerHTML = `
 
                 <div class="courses">
-                    <h3>List wszystkich szkoleń</h3>
+                    <h3>Lista wszystkich szkoleń</h3>
                     <br>
                     <ul>
                     ${resp.map((item, idx) => `
