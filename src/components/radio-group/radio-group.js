@@ -46,9 +46,4 @@ class RadioGroupComponent extends HTMLElement {
     }
 }
 
-try {
-    customElements.define('ui-radio-group', RadioGroupComponent);
-} catch (error) {
-    alert('wersja eksperymentalna - strona nie działa na przeglądarkach Edge oraz IE');
-    console.log(error);
-}
+customElements.define('ui-radio-group', RadioGroupComponent);

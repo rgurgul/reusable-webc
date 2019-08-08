@@ -12,6 +12,9 @@ module.exports = {
         ],
         watch: [
             './src/components/watch/watch.js'
+        ],
+        radio: [
+            './src/components/radio-group/radio-group.js'
         ]
     },
     output: {

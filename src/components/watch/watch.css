@@ -1,1 +1,59 @@
-:host .watch-box{display:inline-block;transform-origin:0 0;transform:skew(0deg, 7deg)}:host .watch-box .binary{margin-top:50px;cursor:pointer}:host .watch-box .binary table{display:inline;margin-right:3px}:host .watch-box .binary table td{width:15px;height:15px;border:1px solid rgba(0,0,0,0.1);box-sizing:border-box;border-radius:2px}:host .watch-box .binary table .active{background-color:rgba(0,0,0,0.2)}:host .watch-box .time{font-size:28px}:host .watch-box.hid span{display:none}ui-watch .watch-box{display:inline-block;transform-origin:0 0;transform:skew(0deg, 7deg)}ui-watch .watch-box .binary{margin-top:50px;cursor:pointer}ui-watch .watch-box .binary table{display:inline;margin-right:3px}ui-watch .watch-box .binary table td{width:15px;height:15px;border:1px solid rgba(0,0,0,0.1);box-sizing:border-box;border-radius:2px}ui-watch .watch-box .binary table .active{background-color:rgba(0,0,0,0.2)}ui-watch .watch-box .time{font-size:28px}ui-watch .watch-box.hid span{display:none}
+:host .watch-box {
+  display: inline-block;
+  transform-origin: 0 0;
+  /* transform: skew(0deg, 7deg); */
+}
+:host .watch-box .binary {
+  cursor: pointer;
+}
+:host .watch-box .binary table {
+  display: inline;
+  margin-right: 3px;
+}
+:host .watch-box .binary table td {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+:host .watch-box .binary table .active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+:host .watch-box .time {
+  font-size: 28px;
+}
+:host .watch-box.hid span {
+  display: none;
+}
+
+ui-watch .watch-box {
+  display: inline-block;
+  transform-origin: 0 0;
+  /* transform: skew(0deg, 7deg); */
+}
+ui-watch .watch-box .binary {
+  cursor: pointer;
+}
+ui-watch .watch-box .binary table {
+  display: inline;
+  margin-right: 3px;
+}
+ui-watch .watch-box .binary table td {
+  width: 15px;
+  height: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+ui-watch .watch-box .binary table .active {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+ui-watch .watch-box .time {
+  font-size: 28px;
+}
+ui-watch .watch-box.hid span {
+  display: none;
+}
+
+/*# sourceMappingURL=watch.css.map */

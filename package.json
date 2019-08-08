@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -w --mode development --config webpack.conf.js",
-    "build": "webpack --mode production --config webpack.conf.js",
+    "sass": "sass src/components:src/components --watch",
+    "dev": "webpack -w --mode development --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js",
     "start": "http-server -o"
   },
   "repository": {
@@ -22,5 +23,9 @@
     "css-loader": "^3.2.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "debugger-look": "^1.0.9",
+    "sass": "^1.22.9"
   }
 }

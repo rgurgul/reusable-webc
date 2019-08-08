@@ -216,7 +216,7 @@ module.exports = "<template id=\"tabs-tpl\">\n    <style>\n        .slot {\n    
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<template>\n    <style>\n        /* @import \"/src/components/watch/watch.css\"; */\n    </style>\n    <div class=\"watch-box hid\">\n        <div class=\"binary\"></div>\n        <span class=\"time\"></span>\n    </div>\n</template>\n";
+module.exports = "<template>\n    <div class=\"watch-box hid\">\n        <div class=\"binary\"></div>\n        <span class=\"time\"></span>\n    </div>\n</template>\n";
 
 /***/ }),
 
@@ -378,6 +378,66 @@ Helpers.getHtmlTmpl = async function (textTemplate, url) {
 
 /***/ }),
 
+/***/ "./src/components/radio-group/radio-group.js":
+/*!***************************************************!*\
+  !*** ./src/components/radio-group/radio-group.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class RadioGroupComponent extends HTMLElement {
+    constructor() {
+        super();
+    }
+
+    static get observedAttributes() {
+        return ['label', 'list'];
+    }
+
+    connectedCallback() {
+
+        this.tpl = `
+            <style>
+                    @import "/src/components/radio-group/radio-group.css";
+            </style>
+            <div>
+                    <div class="label">${this.label}*</div>
+                    <div>
+                    ${JSON.parse(this.list).map((opt) => {
+                return `
+                                <label class="link">
+                                    <input type="radio" required
+                                        value="${opt}"
+                                        name="${this.id}">
+                                    ${opt}
+                                </label>`
+            }).join('')}
+                    </div>
+            </div>
+            `;
+
+        this.innerHTML = this.tpl;
+        this.checked = null;
+        this.addEventListener('click', ({ target }) => {
+            if (/^radio$/.test(target.type)) {
+                if (this.checked) this.checked.closest('label').classList.remove('btn-active');
+                this.checked = document.querySelector(`input[name=${this.id}]:checked`);
+                this.checked.closest('label').classList.add('btn-active');
+                this.dispatchEvent(new CustomEvent('CHANGED', { detail: { [this.id]: target.value } }));
+            }
+        })
+    }
+
+    attributeChangedCallback(attr, oldVal, newVal) {
+        this[attr] = newVal;
+    }
+}
+
+customElements.define('ui-radio-group', RadioGroupComponent);
+
+
+/***/ }),
+
 /***/ "./src/components/tabs/tabs.js":
 /*!*************************************!*\
   !*** ./src/components/tabs/tabs.js ***!
@@ -466,7 +526,7 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ":host .watch-box{display:inline-block;transform-origin:0 0;transform:skew(0deg, 7deg)}:host .watch-box .binary{margin-top:50px;cursor:pointer}:host .watch-box .binary table{display:inline;margin-right:3px}:host .watch-box .binary table td{width:15px;height:15px;border:1px solid rgba(0,0,0,0.1);box-sizing:border-box;border-radius:2px}:host .watch-box .binary table .active{background-color:rgba(0,0,0,0.2)}:host .watch-box .time{font-size:28px}:host .watch-box.hid span{display:none}ui-watch .watch-box{display:inline-block;transform-origin:0 0;transform:skew(0deg, 7deg)}ui-watch .watch-box .binary{margin-top:50px;cursor:pointer}ui-watch .watch-box .binary table{display:inline;margin-right:3px}ui-watch .watch-box .binary table td{width:15px;height:15px;border:1px solid rgba(0,0,0,0.1);box-sizing:border-box;border-radius:2px}ui-watch .watch-box .binary table .active{background-color:rgba(0,0,0,0.2)}ui-watch .watch-box .time{font-size:28px}ui-watch .watch-box.hid span{display:none}\n", ""]);
+exports.push([module.i, ":host .watch-box {\n  display: inline-block;\n  transform-origin: 0 0;\n  /* transform: skew(0deg, 7deg); */\n}\n:host .watch-box .binary {\n  cursor: pointer;\n}\n:host .watch-box .binary table {\n  display: inline;\n  margin-right: 3px;\n}\n:host .watch-box .binary table td {\n  width: 15px;\n  height: 15px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-sizing: border-box;\n  border-radius: 2px;\n}\n:host .watch-box .binary table .active {\n  background-color: rgba(0, 0, 0, 0.2);\n}\n:host .watch-box .time {\n  font-size: 28px;\n}\n:host .watch-box.hid span {\n  display: none;\n}\n\nui-watch .watch-box {\n  display: inline-block;\n  transform-origin: 0 0;\n  /* transform: skew(0deg, 7deg); */\n}\nui-watch .watch-box .binary {\n  cursor: pointer;\n}\nui-watch .watch-box .binary table {\n  display: inline;\n  margin-right: 3px;\n}\nui-watch .watch-box .binary table td {\n  width: 15px;\n  height: 15px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-sizing: border-box;\n  border-radius: 2px;\n}\nui-watch .watch-box .binary table .active {\n  background-color: rgba(0, 0, 0, 0.2);\n}\nui-watch .watch-box .time {\n  font-size: 28px;\n}\nui-watch .watch-box.hid span {\n  display: none;\n}\n", ""]);
 
 
 /***/ }),
@@ -503,7 +563,7 @@ __webpack_require__.r(__webpack_exports__);
             this.getNow.forEach(this.createTable.bind(this));
             setInterval(this.setTime.bind(this), 1000);
             this.setTime();
-            this.addEventListener('click', () => this.box.classList.remove('hid'));
+            this.addEventListener('click', () => this.box.classList.toggle('hid'));
         }
 
         createTable(t, classNr) {
@@ -578,6 +638,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footers_course_footer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_footers_course_footer__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_tabs_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tabs/tabs */ "./src/components/tabs/tabs.js");
 /* harmony import */ var _components_watch_watch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/watch/watch */ "./src/components/watch/watch.js");
+/* harmony import */ var _components_radio_group_radio_group__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/radio-group/radio-group */ "./src/components/radio-group/radio-group.js");
+/* harmony import */ var _components_radio_group_radio_group__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_radio_group_radio_group__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 

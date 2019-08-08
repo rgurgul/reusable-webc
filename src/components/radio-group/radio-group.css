@@ -1,1 +1,47 @@
-:host{user-select:none}:host .label{margin-bottom:8px}:host label.link{cursor:pointer;padding:9px 11px;font-size:14px;margin-bottom:4px;position:relative}:host input[type=radio]{position:absolute;clip:rect(0, 0, 0, 0);pointer-events:none;padding:0}ui-radio-group{user-select:none}ui-radio-group .label{margin-bottom:8px}ui-radio-group label.link{cursor:pointer;padding:9px 11px;font-size:14px;margin-bottom:4px;position:relative}ui-radio-group input[type=radio]{position:absolute;clip:rect(0, 0, 0, 0);pointer-events:none;padding:0}
+:host {
+  user-select: none;
+}
+:host .label {
+  margin-bottom: 8px;
+}
+:host label.link {
+  cursor: pointer;
+  padding: 9px 11px;
+  font-size: 14px;
+  margin-bottom: 4px;
+  position: relative;
+}
+:host input[type=radio] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+  padding: 0;
+}
+:host .btn-active {
+  box-shadow: 0 0 0 2px tomato;
+}
+
+ui-radio-group {
+  user-select: none;
+}
+ui-radio-group .label {
+  margin-bottom: 8px;
+}
+ui-radio-group label.link {
+  cursor: pointer;
+  padding: 9px 11px;
+  font-size: 14px;
+  margin-bottom: 4px;
+  position: relative;
+}
+ui-radio-group input[type=radio] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+  padding: 0;
+}
+ui-radio-group .btn-active {
+  box-shadow: 0 0 0 2px tomato;
+}
+
+/*# sourceMappingURL=radio-group.css.map */

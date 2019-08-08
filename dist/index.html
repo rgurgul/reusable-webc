@@ -15,6 +15,16 @@
         <ui-watch></ui-watch>
     </fieldset>
 
+    <br>
+
+    <fieldset>
+        <legend>Radio Group Component</legend>
+        <ui-radio-group id="participantsCount" label="participants count" list="[3,4,5,6,7,8,9,10,11,12]">
+        </ui-radio-group>
+    </fieldset>
+
+    <br>
+
     <fieldset>
         <legend>Tabs Component</legend>
         <ui-tabs>
@@ -33,12 +43,18 @@
         </ui-tabs>
     </fieldset>
 
+    <br>
+
     <fieldset>
         <legend>Footer Ad Component</legend>
         <course-footer courses></course-footer>
     </fieldset>
 
     <script src="webc/all.js"></script>
+
+    <script>
+        document.querySelector('#participantsCount').addEventListener('CHANGED', ({ detail }) => console.log(detail))
+    </script>
 
 </body>
 

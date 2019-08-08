@@ -20,7 +20,7 @@ import Helpers from "../helpers.js";
             this.getNow.forEach(this.createTable.bind(this));
             setInterval(this.setTime.bind(this), 1000);
             this.setTime();
-            this.addEventListener('click', () => this.box.classList.remove('hid'));
+            this.addEventListener('click', () => this.box.classList.toggle('hid'));
         }
 
         createTable(t, classNr) {

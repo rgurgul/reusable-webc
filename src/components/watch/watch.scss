@@ -2,9 +2,8 @@
   .watch-box {
     display: inline-block;
     transform-origin: 0 0;
-    transform: skew(0deg, 7deg);
+    /* transform: skew(0deg, 7deg); */
     .binary {
-      margin-top: 50px;
       cursor: pointer;
       table {
         display: inline;
@@ -14,9 +13,7 @@
           width: $w;
           height: $w;
           border: 1px solid rgba(black, .1);
-
           box-sizing: border-box;
-
           border-radius: 2px;
         }
         .active {
@@ -24,10 +21,8 @@
         }
       }
     }
-
     .time {
       font-size: 28px;
-
     }
     &.hid span {
       display: none;
