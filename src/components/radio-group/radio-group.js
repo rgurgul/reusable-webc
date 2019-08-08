@@ -8,28 +8,27 @@ class RadioGroupComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        const style = document.createElement('style')
+        style.textContent = require('./radio-group.css').toString();
+        this.appendChild(style);
 
-        this.tpl = `
-            <style>
-                    @import "/src/components/radio-group/radio-group.css";
-            </style>
-            <div>
-                    <div class="label">${this.label}*</div>
-                    <div>
-                    ${JSON.parse(this.list).map((opt) => {
-                return `
-                                <label class="link">
-                                    <input type="radio" required
-                                        value="${opt}"
-                                        name="${this.id}">
-                                    ${opt}
-                                </label>`
-            }).join('')}
-                    </div>
-            </div>
-            `;
-
-        this.innerHTML = this.tpl;
+        const content = document.createElement('div')
+        content.innerHTML = `
+                <div>
+                        <div class="label">${this.label}*</div>
+                        <div>
+                        ${JSON.parse(this.list).map((opt) => {
+                            return `
+                                    <label class="link">
+                                        <input type="radio" required
+                                            value="${opt}"
+                                            name="${this.id}">
+                                        ${opt}
+                                    </label>`
+                        }).join('')}
+                        </div>
+                </div>`;
+        this.appendChild(content)
         this.checked = null;
         this.addEventListener('click', ({ target }) => {
             if (/^radio$/.test(target.type)) {

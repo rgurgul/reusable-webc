@@ -378,12 +378,26 @@ Helpers.getHtmlTmpl = async function (textTemplate, url) {
 
 /***/ }),
 
+/***/ "./src/components/radio-group/radio-group.css":
+/*!****************************************************!*\
+  !*** ./src/components/radio-group/radio-group.css ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Module
+exports.push([module.i, ":host {\n  user-select: none;\n}\n:host .label {\n  margin-bottom: 8px;\n}\n:host label.link {\n  cursor: pointer;\n  padding: 9px 11px;\n  font-size: 14px;\n  margin-bottom: 4px;\n  position: relative;\n}\n:host input[type=radio] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n  padding: 0;\n}\n:host .btn-active {\n  box-shadow: 0 0 0 2px tomato;\n}\n\nui-radio-group {\n  user-select: none;\n}\nui-radio-group .label {\n  margin-bottom: 8px;\n}\nui-radio-group label.link {\n  cursor: pointer;\n  padding: 9px 11px;\n  font-size: 14px;\n  margin-bottom: 4px;\n  position: relative;\n}\nui-radio-group input[type=radio] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n  padding: 0;\n}\nui-radio-group .btn-active {\n  box-shadow: 0 0 0 2px tomato;\n}\n", ""]);
+
+
+/***/ }),
+
 /***/ "./src/components/radio-group/radio-group.js":
 /*!***************************************************!*\
   !*** ./src/components/radio-group/radio-group.js ***!
   \***************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 class RadioGroupComponent extends HTMLElement {
     constructor() {
@@ -395,28 +409,27 @@ class RadioGroupComponent extends HTMLElement {
     }
 
     connectedCallback() {
+        const style = document.createElement('style')
+        style.textContent = __webpack_require__(/*! ./radio-group.css */ "./src/components/radio-group/radio-group.css").toString();
+        this.appendChild(style);
 
-        this.tpl = `
-            <style>
-                    @import "/src/components/radio-group/radio-group.css";
-            </style>
-            <div>
-                    <div class="label">${this.label}*</div>
-                    <div>
-                    ${JSON.parse(this.list).map((opt) => {
-                return `
-                                <label class="link">
-                                    <input type="radio" required
-                                        value="${opt}"
-                                        name="${this.id}">
-                                    ${opt}
-                                </label>`
-            }).join('')}
-                    </div>
-            </div>
-            `;
-
-        this.innerHTML = this.tpl;
+        const content = document.createElement('div')
+        content.innerHTML = `
+                <div>
+                        <div class="label">${this.label}*</div>
+                        <div>
+                        ${JSON.parse(this.list).map((opt) => {
+                            return `
+                                    <label class="link">
+                                        <input type="radio" required
+                                            value="${opt}"
+                                            name="${this.id}">
+                                        ${opt}
+                                    </label>`
+                        }).join('')}
+                        </div>
+                </div>`;
+        this.appendChild(content)
         this.checked = null;
         this.addEventListener('click', ({ target }) => {
             if (/^radio$/.test(target.type)) {
