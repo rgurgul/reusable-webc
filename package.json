@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pack": "webpack -w --mode development --output dist/webc.js",
-    "build": "webpack --mode production --output dist/webc.js",
+    "build": "webpack --mode production --config webpack.conf.js",
     "start": "http-server -o"
   },
   "repository": {

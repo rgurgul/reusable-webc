@@ -6,11 +6,7 @@ import Helpers from "../helpers.js";
         async  connectedCallback() {
             const root = this.attachShadow({ mode: 'open' });
             const tpl = await Helpers.getHtmlTmpl(require("html-loader!./tabs.html"));
-
-            //const tpl = await Helpers.getHtmlTmpl('components/tabs/tabs.html');
-
             root.appendChild(tpl.content.cloneNode(true));
-
             this.createButtons(this);
         }
 
@@ -22,7 +18,7 @@ import Helpers from "../helpers.js";
                 this
                     .querySelector('button.btn-active')
                     .classList.remove('btn-active');
-            } catch (err) { }Helpers
+            } catch (err) { } Helpers
 
             tab.setAttribute('visible', 'true');
             btn.classList.add('btn-active');
