@@ -1,7 +1,7 @@
 module.exports = {
     mode: 'development',
     entry: {
-        main: [
+        all: [
             './src/index.js'
         ],
         tabs: [
@@ -15,8 +15,8 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + '/dist',
-        publicPath: '/dist',
+        path: __dirname + '/dist/webc',
+        publicPath: '/dist/webc',
         filename: '[name].js'
     },
     devtool: 'source-map',
