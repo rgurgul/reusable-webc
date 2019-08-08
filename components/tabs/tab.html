@@ -1,0 +1,22 @@
+<template id="tab-tpl">
+    <style>
+        /*todo: scss*/
+
+        :host {
+            display: none;
+        }
+
+        :host([visible="true"]) {
+            display: block;
+        }
+
+        ui-tab {
+            display: none;
+        }
+
+        ui-tab[visible="true"] {
+            display: block;
+        }
+    </style>
+    <slot></slot>
+</template>

@@ -1,6 +1,6 @@
 {
-  "name": "debugger-webc-lib",
-  "version": "1.0.26",
+  "name": "reusable-webc",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/rogu/debugger-webc-lib.git"
+    "url": "git+ssh://git@bitbucket.org/rogu/reusable-webc.git"
   },
   "keywords": [],
   "author": "Robert Gurgul",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/rogu/debugger-webc-lib#readme",
+  "homepage": "https://bitbucket.org/rogu/reusable-webc#readme",
   "dependencies": {
     "http-server": "^0.11.1"
   }
