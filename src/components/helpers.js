@@ -19,8 +19,10 @@ Helpers.createEl = function (tagName, target, params) {
     return el;
 };
 
-Helpers.getHtmlTmpl = async function (url) {
-    const res = await fetch(url);
-    const textTemplate = await res.text();
+Helpers.getHtmlTmpl = async function (textTemplate, url) {
+    if(url) {
+        const res = await fetch(url);
+        textTemplate = await res.text();
+    }
     return new DOMParser().parseFromString(textTemplate, 'text/html').querySelector('template');
 }
