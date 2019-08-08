@@ -6,8 +6,14 @@ import Helpers from "../helpers.js";
 
         async connectedCallback() {
             this.root = this.attachShadow({ mode: 'open' });
+
+            const style = document.createElement('style')
+            style.textContent = require('./watch.css').toString();
+            this.root.appendChild(style);
+
             const tpl = await Helpers.getHtmlTmpl(require("html-loader!./watch.html"));
             this.root.appendChild(tpl.content.cloneNode(true));
+
             this.box = this.root.querySelector('.watch-box');
             this.binary = this.box.querySelector('.binary');
             this.time = this.box.querySelector('.time');

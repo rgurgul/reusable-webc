@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pack": "webpack -w --mode development --output dist/webc/all.js",
+    "dev": "webpack -w --mode development --config webpack.conf.js",
     "build": "webpack --mode production --config webpack.conf.js",
     "start": "http-server -o"
   },
@@ -16,9 +16,10 @@
   "author": "Robert Gurgul",
   "license": "ISC",
   "homepage": "https://bitbucket.org/rogu/reusable-webc#readme",
-  "dependencies": {
+  "devDependencies": {
     "html-loader": "^0.5.5",
     "http-server": "^0.11.1",
+    "css-loader": "^3.2.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
   }

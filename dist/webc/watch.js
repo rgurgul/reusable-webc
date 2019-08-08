@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -187,28 +187,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "./node_modules/html-loader/index.js!./src/components/tabs/tab.html":
-/*!*****************************************************************!*\
-  !*** ./node_modules/html-loader!./src/components/tabs/tab.html ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<template id=\"tab-tpl\">\n    <style>\n        /*todo: scss*/\n\n        :host {\n            display: none;\n        }\n\n        :host([visible=\"true\"]) {\n            display: block;\n        }\n\n        ui-tab {\n            display: none;\n        }\n\n        ui-tab[visible=\"true\"] {\n            display: block;\n        }\n    </style>\n    <slot></slot>\n</template>\n";
-
-/***/ }),
-
-/***/ "./node_modules/html-loader/index.js!./src/components/tabs/tabs.html":
-/*!******************************************************************!*\
-  !*** ./node_modules/html-loader!./src/components/tabs/tabs.html ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<template id=\"tabs-tpl\">\n    <style>\n        .slot {\n            margin: 0 20px;\n            padding: 20px;\n        }\n\n        ::slotted(button) {\n            margin: 5px !important;\n            display: block !important;\n        }\n\n        ::slotted(button.selected) {\n            background-color: #ff0000 !important;\n            outline: none !important;\n            color: white !important;\n        }\n\n        .row {\n            display: inline-flex;\n        }\n    </style>\n\n    <div class=\"row\">\n        <div class='btns'></div>\n        <div class=\"slot\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n";
-
-/***/ }),
-
 /***/ "./node_modules/html-loader/index.js!./src/components/watch/watch.html":
 /*!********************************************************************!*\
   !*** ./node_modules/html-loader!./src/components/watch/watch.html ***!
@@ -217,122 +195,6 @@ module.exports = "<template id=\"tabs-tpl\">\n    <style>\n        .slot {\n    
 /***/ (function(module, exports) {
 
 module.exports = "<template>\n    <style>\n        /* @import \"/src/components/watch/watch.css\"; */\n    </style>\n    <div class=\"watch-box hid\">\n        <div class=\"binary\"></div>\n        <span class=\"time\"></span>\n    </div>\n</template>\n";
-
-/***/ }),
-
-/***/ "./src/components/footers/course-footer.js":
-/*!*************************************************!*\
-  !*** ./src/components/footers/course-footer.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-class CourseFooter extends HTMLElement {
-    static get observedAttributes() {
-        return ['courses'];
-    }
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-
-        this.shadowRoot.innerHTML = `
-            <footer>
-                <div class="linkedin">
-                    <h3>Podziel się opinią o szkoleniu.</h3>
-                    <br>
-                    Jeżeli szkolenie było <b>OK</b>, zapraszam Cię do moich kontaktów na
-                    <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>
-                </div>
-            </footer>
-         `;
-
-        const style = document.createElement('style')
-        style.textContent = `
-        footer{
-            border: 1px solid #999;
-            color: white;
-            padding: 50px;
-            background: #606060;
-            border-radius: 4px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        footer a {
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            border: 2px solid;
-            padding: 4px 6px;
-            line-height: 36px;
-        }
-        footer ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        footer ul li {
-            display: inline-block;
-        }
-
-        h3 {
-            margin: 0;
-        }
-        *{
-            font-family: sans-serif;
-        }
-        .linkedin, .courses{
-            flex: 1;
-        }
-        @media screen and (max-width: 600px) {
-            footer {
-                flex-direction: column;
-            }
-            .linkedin, .courses {
-                flex-basis: auto;
-                margin-top: 20px;
-            }
-        }
-        `
-        this.shadowRoot.appendChild(style);
-    }
-
-    courses() {
-        const container = document.createElement('div');
-        container.classList.add('courses');
-        this.shadowRoot.querySelector('footer').appendChild(container);
-        fetch('https://urgu.pl/api/courses')
-            .then((resp) => resp.json())
-            .then((resp) => {
-                container.innerHTML = `
-
-                <div class="courses">
-                    <h3>Lista wszystkich szkoleń</h3>
-                    <br>
-                    <ul>
-                    ${resp.map((item, idx) => `
-                        <li>
-                            <a href='https://debugger.pl/szkolenie-${item.name}' target='_blank'>
-                            ${item.name.charAt(0).toUpperCase() + item.name.slice(1).replace(/-[\w]/g, (val, idx, str) => {
-                                const result = str.charAt(idx + 2) !== '-' ? val.charAt(1).toUpperCase() : val.charAt(1);
-                                return ' ' + result;
-                            })}</a>
-                        </li>
-                    `).join('')}
-                    </ul>
-                </div>
-
-                `
-            })
-    }
-
-    attributeChangedCallback(name) {
-        this[name]();
-    }
-}
-
-customElements.define('course-footer', CourseFooter);
-
 
 /***/ }),
 
@@ -374,85 +236,6 @@ Helpers.getHtmlTmpl = async function (textTemplate, url) {
     }
     return new DOMParser().parseFromString(textTemplate, 'text/html').querySelector('template');
 }
-
-
-/***/ }),
-
-/***/ "./src/components/tabs/tabs.js":
-/*!*************************************!*\
-  !*** ./src/components/tabs/tabs.js ***!
-  \*************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _helpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../helpers.js */ "./src/components/helpers.js");
-
-
-(function () {
-
-    class UiTabs extends HTMLElement {
-        async  connectedCallback() {
-            const root = this.attachShadow({ mode: 'open' });
-            const tpl = await _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getHtmlTmpl(__webpack_require__(/*! html-loader!./tabs.html */ "./node_modules/html-loader/index.js!./src/components/tabs/tabs.html"));
-            root.appendChild(tpl.content.cloneNode(true));
-            this.createButtons(this);
-        }
-
-        setActive(btn, tab) {
-            try {
-                this
-                    .querySelector('ui-tab[visible=true]')
-                    .setAttribute('visible', 'false');
-                this
-                    .querySelector('button.btn-active')
-                    .classList.remove('btn-active');
-            } catch (err) { } _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"]
-
-            tab.setAttribute('visible', 'true');
-            btn.classList.add('btn-active');
-        }
-
-        createButtons() {
-            Array.from(this.querySelectorAll('ui-tab'))
-                .forEach((tab, idx) => {
-                    const slotType = tab.getAttribute('type');
-                    if (!this.shadowRoot.querySelector(`slot[name=${slotType}]`)) {
-                        const label = this.shadowRoot.querySelector('.btns').appendChild(document.createElement('div'));
-                        label.innerHTML = slotType;
-                        label.style = `font-weight: bold; text-transform:uppercase`
-                        const newSlot = this.shadowRoot.querySelector('.btns').appendChild(document.createElement('slot'));
-                        newSlot.name = slotType;
-                    }
-                    const tabName = tab.getAttribute('tab-name');
-                    const btn = _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].createEl('button', this,
-                        {
-                            'data-target': tabName,
-                            innerHTML: `<span style="background: white; color: black; padding: 2px 3px; margin: 0 2px;"><b>${idx}</b></span> ${tabName}`,
-                            slot: slotType,
-                            className: 'link'
-                        });
-                    tab.getAttribute('visible') && (btn.className = 'btn-active');
-                    btn.addEventListener('click', (evt) => {
-                        this.setActive(evt.currentTarget, tab);
-                    });
-                });
-        }
-    }
-
-    class UiTab extends HTMLElement {
-        async connectedCallback() {
-            const root = this.attachShadow({ mode: 'open' });
-            const tpl = await _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getHtmlTmpl(__webpack_require__(/*! html-loader!./tab.html */ "./node_modules/html-loader/index.js!./src/components/tabs/tab.html"));
-            root.appendChild(tpl.content.cloneNode(true));
-        }
-    }
-
-    customElements.define('ui-tabs', UiTabs);
-    customElements.define('ui-tab', UiTab);
-
-}());
 
 
 /***/ }),
@@ -565,37 +348,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_footers_course_footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/footers/course-footer */ "./src/components/footers/course-footer.js");
-/* harmony import */ var _components_footers_course_footer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_footers_course_footer__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_tabs_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tabs/tabs */ "./src/components/tabs/tabs.js");
-/* harmony import */ var _components_watch_watch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/watch/watch */ "./src/components/watch/watch.js");
-
-
-
-
-
-/***/ }),
-
-/***/ 0:
-/*!****************************!*\
-  !*** multi ./src/index.js ***!
-  \****************************/
+/***/ 3:
+/*!*********************************************!*\
+  !*** multi ./src/components/watch/watch.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./src/index.js */"./src/index.js");
+module.exports = __webpack_require__(/*! ./src/components/watch/watch.js */"./src/components/watch/watch.js");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=all.js.map
+//# sourceMappingURL=watch.js.map
