@@ -421,7 +421,7 @@ __webpack_require__.r(__webpack_exports__);
                     if (!this.shadowRoot.querySelector(`slot[name=${slotType}]`)) {
                         const label = this.shadowRoot.querySelector('.btns').appendChild(document.createElement('div'));
                         label.innerHTML = slotType;
-                        label.style = `font-weight: bold; text-transform:uppercase`
+                        label.style = `text-transform:uppercase`
                         const newSlot = this.shadowRoot.querySelector('.btns').appendChild(document.createElement('slot'));
                         newSlot.name = slotType;
                     }
