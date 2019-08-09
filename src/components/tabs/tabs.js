@@ -7,8 +7,8 @@ import Helpers from "../helpers.js";
             const root = this.attachShadow({ mode: 'open' });
 
             const style = document.createElement('style');
-            const styleUrl = './styles/tabs-' + (this.hasAttribute('portrait') ? 'portrait' : 'landscape') + '.css';
-            style.textContent = require(`${styleUrl}`).toString();
+            const content = this.hasAttribute('portrait') ? require('./styles/tabs-portrait.css') : require('./styles/tabs-landscape.css')
+            style.textContent = content.toString();
             root.appendChild(style);
 
             const tpl = await Helpers.getHtmlTmpl(require("html-loader!./tabs.html"));
