@@ -4,10 +4,10 @@
 }
 
 ::slotted(button) {
-    display: inline-block !important;
+    display: block !important;
     margin: 5px !important;
     cursor: pointer;
-    background: #331;
+    background: #333;
     color: white;
     border: none;
     padding: 5px 10px;
