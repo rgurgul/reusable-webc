@@ -45,7 +45,9 @@ import Helpers from "../helpers.js";
                     const btn = Helpers.createEl('button', this,
                         {
                             'data-target': tabName,
-                            innerHTML: `<span style="color: #999">${idx}</span> ${tabName}`,
+                            innerHTML: `${this.hasAttribute('number')
+                                ? `<small style="border: 1px solid;padding: 0 2px;">${idx}</small>`
+                                : ''} ${tabName}`,
                             slot: slotType,
                             /* className: 'link' */
                         });

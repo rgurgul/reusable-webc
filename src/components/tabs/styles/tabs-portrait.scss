@@ -1,19 +1,19 @@
 .slot {
-            margin: 0 20px;
-            padding: 20px;
-        }
+    margin: 0 20px;
+    padding: 20px;
+}
 
-        ::slotted(button) {
-            margin: 5px !important;
-            display: block !important;
-        }
+::slotted(button) {
+    margin: 5px !important;
+    display: block !important;
+}
 
-        ::slotted(button.selected) {
-            background-color: #ff0000 !important;
-            outline: none !important;
-            color: white !important;
-        }
+::slotted(button.selected) {
+    background-color: #ff0000 !important;
+    outline: none !important;
+    color: white !important;
+}
 
-        .row {
-            display: inline-flex;
-        }
+.row {
+    display: inline-flex;
+}
