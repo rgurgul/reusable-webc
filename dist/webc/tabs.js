@@ -312,7 +312,7 @@ exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid bl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: Unexpected token (1:1)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n>  .slot {\n|             padding: 10px 0;\n|             border-top: 1px solid black;");
+throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> .slot {\n|     padding: 10px 0;\n|     border-top: 1px solid black;");
 
 /***/ }),
 
@@ -337,7 +337,7 @@ exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::sl
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> .slot {\n|             margin: 0 20px;\n|             padding: 20px;");
+throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> .slot {\n|     margin: 0 20px;\n|     padding: 20px;");
 
 /***/ }),
 
@@ -420,9 +420,11 @@ __webpack_require__.r(__webpack_exports__);
                     const btn = _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].createEl('button', this,
                         {
                             'data-target': tabName,
-                            innerHTML: `${tabName} <span style="color: #999">${idx}</span>`,
+                            innerHTML: `${this.hasAttribute('number')
+                                ? `<small style="border: 1px solid;padding: 0 2px;">${idx}</small>`
+                                : ''} ${tabName}`,
                             slot: slotType,
-                            className: 'link'
+                            /* className: 'link' */
                         });
                     tab.getAttribute('visible') && (btn.className = 'btn-active');
                     btn.addEventListener('click', (evt) => {
