@@ -47,7 +47,7 @@ import Helpers from "../helpers.js";
                             'data-target': tabName,
                             innerHTML: `<span style="color: #999">${idx}</span> ${tabName}`,
                             slot: slotType,
-                            className: 'link'
+                            /* className: 'link' */
                         });
                     tab.getAttribute('visible') && (btn.className = 'btn-active');
                     btn.addEventListener('click', (evt) => {
