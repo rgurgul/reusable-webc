@@ -9,6 +9,7 @@
     font-weight: 600;
     border: 1px solid transparent;
     background: transparent;
+    cursor: pointer;
 }
 
 ::slotted(button.btn-active) {
