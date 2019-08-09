@@ -4,8 +4,13 @@
 }
 
 ::slotted(button) {
-    margin: 5px !important;
-    display: block !important;
+    display: block;
+    margin: 5px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
 }
 
 ::slotted(button.selected) {
