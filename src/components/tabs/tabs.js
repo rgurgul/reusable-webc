@@ -5,6 +5,12 @@ import Helpers from "../helpers.js";
     class UiTabs extends HTMLElement {
         async  connectedCallback() {
             const root = this.attachShadow({ mode: 'open' });
+
+            const style = document.createElement('style');
+            const styleUrl = './styles/tabs-' + (this.hasAttribute('portrait') ? 'portrait' : 'landscape') + '.css';
+            style.textContent = require(`${styleUrl}`).toString();
+            root.appendChild(style);
+
             const tpl = await Helpers.getHtmlTmpl(require("html-loader!./tabs.html"));
             root.appendChild(tpl.content.cloneNode(true));
             this.createButtons(this);
@@ -39,7 +45,7 @@ import Helpers from "../helpers.js";
                     const btn = Helpers.createEl('button', this,
                         {
                             'data-target': tabName,
-                            innerHTML: `<span style="background: white; color: black; padding: 2px 3px; margin: 0 2px;"><b>${idx}</b></span> ${tabName}`,
+                            innerHTML: `${tabName} <span style="color: #999">${idx}</span>`,
                             slot: slotType,
                             className: 'link'
                         });
