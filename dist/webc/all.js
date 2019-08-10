@@ -262,7 +262,7 @@ class CourseFooter extends HTMLElement {
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            border: 2px solid;
+            border: 1.2px solid;
             padding: 4px 6px;
             line-height: 36px;
         }
