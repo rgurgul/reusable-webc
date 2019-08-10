@@ -11,12 +11,14 @@
     color: white;
     border: none;
     padding: 5px 10px;
-}
-
-::slotted(button.selected) {
-    background-color: #ff0000 !important;
     outline: none !important;
     color: white !important;
+    box-shadow: inset 0 0 0 1px #343a40;
+}
+
+::slotted(button.btn-active) {
+    background-color: white !important;
+    color: black !important;
 }
 
 .row {
