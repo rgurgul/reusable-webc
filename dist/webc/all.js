@@ -451,46 +451,6 @@ customElements.define('ui-radio-group', RadioGroupComponent);
 
 /***/ }),
 
-/***/ "./src/components/tabs sync recursive ^.*$":
-/*!***************************************!*\
-  !*** ./src/components/tabs sync ^.*$ ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./styles/tabs-landscape.css": "./src/components/tabs/styles/tabs-landscape.css",
-	"./styles/tabs-landscape.scss": "./src/components/tabs/styles/tabs-landscape.scss",
-	"./styles/tabs-portrait.css": "./src/components/tabs/styles/tabs-portrait.css",
-	"./styles/tabs-portrait.scss": "./src/components/tabs/styles/tabs-portrait.scss",
-	"./tab.html": "./src/components/tabs/tab.html",
-	"./tabs": "./src/components/tabs/tabs.js",
-	"./tabs.html": "./src/components/tabs/tabs.html",
-	"./tabs.js": "./src/components/tabs/tabs.js"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./src/components/tabs sync recursive ^.*$";
-
-/***/ }),
-
 /***/ "./src/components/tabs/styles/tabs-landscape.css":
 /*!*******************************************************!*\
   !*** ./src/components/tabs/styles/tabs-landscape.css ***!
@@ -500,19 +460,8 @@ webpackContext.id = "./src/components/tabs sync recursive ^.*$";
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid black;\n}\n\n::slotted(button) {\n  margin: 0 0 -1px;\n  padding: 5px 5px;\n  font-weight: 600;\n  border: 1px solid transparent;\n  background: transparent;\n}\n\n::slotted(button.btn-active) {\n  outline: none !important;\n  border: 1px solid black;\n  border-bottom: 2px solid #fff;\n  border-radius: 1px;\n}\n\n.row {\n  padding: 1px;\n}\n", ""]);
+exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid black;\n}\n\n::slotted(button) {\n  margin: 0 0 -1px;\n  padding: 7px 8px;\n  font-weight: 600;\n  border: 1px solid transparent;\n  background: transparent;\n  cursor: pointer;\n}\n\n::slotted(button.btn-active) {\n  outline: none !important;\n  border: 1px solid black;\n  border-bottom: 1px solid white;\n  border-radius: 2px !important;\n}\n\n.row {\n  padding: 2px;\n}\n", ""]);
 
-
-/***/ }),
-
-/***/ "./src/components/tabs/styles/tabs-landscape.scss":
-/*!********************************************************!*\
-  !*** ./src/components/tabs/styles/tabs-landscape.scss ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> .slot {\n|     padding: 10px 0;\n|     border-top: 1px solid black;");
 
 /***/ }),
 
@@ -525,41 +474,8 @@ throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an ap
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  margin: 5px !important;\n  display: block !important;\n}\n\n::slotted(button.selected) {\n  background-color: #ff0000 !important;\n  outline: none !important;\n  color: white !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
+exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block !important;\n  margin: 5px !important;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n}\n\n::slotted(button.selected) {\n  background-color: #ff0000 !important;\n  outline: none !important;\n  color: white !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
 
-
-/***/ }),
-
-/***/ "./src/components/tabs/styles/tabs-portrait.scss":
-/*!*******************************************************!*\
-  !*** ./src/components/tabs/styles/tabs-portrait.scss ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> .slot {\n|     margin: 0 20px;\n|     padding: 20px;");
-
-/***/ }),
-
-/***/ "./src/components/tabs/tab.html":
-/*!**************************************!*\
-  !*** ./src/components/tabs/tab.html ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <template id=\"tab-tpl\">\n|     <style>\n|         /*todo: scss*/");
-
-/***/ }),
-
-/***/ "./src/components/tabs/tabs.html":
-/*!***************************************!*\
-  !*** ./src/components/tabs/tabs.html ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <template id=\"tabs-tpl\">\n|     <div class=\"row\">\n|         <div class='btns'></div>");
 
 /***/ }),
 
@@ -582,8 +498,8 @@ __webpack_require__.r(__webpack_exports__);
             const root = this.attachShadow({ mode: 'open' });
 
             const style = document.createElement('style');
-            const styleUrl = './styles/tabs-' + (this.hasAttribute('portrait') ? 'portrait' : 'landscape') + '.css';
-            style.textContent = __webpack_require__("./src/components/tabs sync recursive ^.*$")(`${styleUrl}`).toString();
+            const content = this.hasAttribute('portrait') ? __webpack_require__(/*! ./styles/tabs-portrait.css */ "./src/components/tabs/styles/tabs-portrait.css") : __webpack_require__(/*! ./styles/tabs-landscape.css */ "./src/components/tabs/styles/tabs-landscape.css")
+            style.textContent = content.toString();
             root.appendChild(style);
 
             const tpl = await _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"].getHtmlTmpl(__webpack_require__(/*! html-loader!./tabs.html */ "./node_modules/html-loader/index.js!./src/components/tabs/tabs.html"));
