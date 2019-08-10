@@ -24,10 +24,11 @@ import Helpers from "../helpers.js";
                 this
                     .querySelector('button.btn-active')
                     .classList.remove('btn-active');
-            } catch (err) { } Helpers
+            } catch (err) { }
 
             tab.setAttribute('visible', 'true');
             btn.classList.add('btn-active');
+            this.dispatchEvent(new CustomEvent('changed', { detail: tab }));
         }
 
         createButtons() {

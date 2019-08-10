@@ -315,10 +315,11 @@ __webpack_require__.r(__webpack_exports__);
                 this
                     .querySelector('button.btn-active')
                     .classList.remove('btn-active');
-            } catch (err) { } _helpers_js__WEBPACK_IMPORTED_MODULE_0__["default"]
+            } catch (err) { }
 
             tab.setAttribute('visible', 'true');
             btn.classList.add('btn-active');
+            this.dispatchEvent(new CustomEvent('changed', { detail: tab }));
         }
 
         createButtons() {
