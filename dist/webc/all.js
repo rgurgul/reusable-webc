@@ -252,7 +252,7 @@ class CourseFooter extends HTMLElement {
             border: 1px solid #999;
             color: white;
             padding: 50px;
-            background: #606060;
+            background: #555;
             border-radius: 4px;
             display: flex;
             flex-wrap: wrap;
