@@ -108,6 +108,9 @@ class CourseFooter extends HTMLElement {
                     <br>
                     Jeżeli szkolenie było <b>OK</b>, zapraszam Cię do moich kontaktów na
                     <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>
+                    <br/>
+                    <br/>
+                    <a href="https://debugger.pl/kontakt" target="_blank">Kontakt ze mną</a>
                 </div>
             </footer>
          `;
