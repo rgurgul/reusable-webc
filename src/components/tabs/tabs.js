@@ -46,8 +46,8 @@ import Helpers from "../helpers.js";
                         {
                             'data-target': tabName,
                             innerHTML: `${this.hasAttribute('number')
-                                ? `<small style="border: 1px solid;padding: 0 2px;">${idx}</small>`
-                                : ''} ${tabName}`,
+                                ? `<nobr><small style="border: 1px solid;padding: 0 2px;">${idx}</small>`
+                                : ''} ${tabName}</nobr>`,
                             slot: slotType,
                             /* className: 'link' */
                         });

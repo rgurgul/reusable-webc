@@ -274,7 +274,7 @@ exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid bl
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block !important;\n  margin: 5px !important;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n}\n\n::slotted(button.selected) {\n  background-color: #ff0000 !important;\n  outline: none !important;\n  color: white !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
+exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block;\n  margin: 5px !important;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n}\n\n::slotted(button.selected) {\n  background-color: #ff0000 !important;\n  outline: none !important;\n  color: white !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
 
 
 /***/ }),
@@ -337,8 +337,8 @@ __webpack_require__.r(__webpack_exports__);
                         {
                             'data-target': tabName,
                             innerHTML: `${this.hasAttribute('number')
-                                ? `<small style="border: 1px solid;padding: 0 2px;">${idx}</small>`
-                                : ''} ${tabName}`,
+                                ? `<nobr><small style="border: 1px solid;padding: 0 2px;">${idx}</small>`
+                                : ''} ${tabName}</nobr>`,
                             slot: slotType,
                             /* className: 'link' */
                         });
