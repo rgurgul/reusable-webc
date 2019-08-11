@@ -260,7 +260,7 @@ Helpers.getHtmlTmpl = async function (textTemplate, url) {
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid black;\n}\n\n::slotted(button) {\n  margin: 0 0 -1px;\n  padding: 7px 8px;\n  font-weight: 600;\n  border: 1px solid transparent;\n  background: transparent;\n  cursor: pointer;\n}\n\n::slotted(button.btn-active) {\n  outline: none !important;\n  border: 1px solid black;\n  border-bottom: 1px solid white;\n  border-radius: 2px !important;\n}\n\n.row {\n  padding: 2px;\n}\n", ""]);
+exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid black;\n}\n\n::slotted(button) {\n  margin: 0 0 -1px;\n  padding: 5px 8px;\n  font-weight: 600;\n  border: 1px solid transparent;\n  background: transparent;\n  cursor: pointer;\n}\n\n::slotted(button.btn-active) {\n  outline: none !important;\n  border: 1px solid black;\n  border-bottom: 1px solid white;\n  border-radius: 3px 3px 0 0;\n}\n\n.row {\n  padding: 2px;\n}\n", ""]);
 
 
 /***/ }),
@@ -274,7 +274,7 @@ exports.push([module.i, ".slot {\n  padding: 10px 0;\n  border-top: 1px solid bl
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block;\n  margin: 5px 0 !important;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n  outline: none !important;\n  color: white !important;\n  box-shadow: inset 0 0 0 1px #343a40;\n}\n\n::slotted(button.btn-active) {\n  background-color: white !important;\n  color: black !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
+exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block;\n  margin: 5px 0 !important;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n  outline: none !important;\n  color: white !important;\n  box-shadow: inset 0 0 0 1px #343a40;\n  border-radius: 3px;\n}\n\n::slotted(button.btn-active) {\n  background-color: white !important;\n  color: black !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
 
 
 /***/ }),
