@@ -1,6 +1,6 @@
 {
   "name": "reusable-webc",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "reusable web components",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,13 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/rogu/reusable-webc.git"
   },
-  "keywords": ["web components", "javascript", "binary watch", "tabs", "radio group"],
+  "keywords": [
+    "web components",
+    "javascript",
+    "binary watch",
+    "tabs",
+    "radio group"
+  ],
   "author": "Robert Gurgul",
   "license": "ISC",
   "homepage": "https://bitbucket.org/rogu/reusable-webc#readme",
