@@ -1,7 +1,7 @@
 {
   "name": "reusable-webc",
   "version": "0.0.41",
-  "description": "",
+  "description": "reusable web components",
   "main": "index.js",
   "scripts": {
     "sass": "sass --no-source-map src/components:src/components --watch",
