@@ -1,6 +1,6 @@
 {
   "name": "reusable-webc",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "reusable web components",
   "main": "index.js",
   "scripts": {
