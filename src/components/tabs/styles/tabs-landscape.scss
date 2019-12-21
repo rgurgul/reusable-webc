@@ -1,3 +1,5 @@
+@import "./../../../../node_modules/debugger-look/src/variables";
+
 .slot {
     padding: 10px 0;
     border-top: 1px solid #333;
@@ -18,7 +20,7 @@
     border: 1px solid #333;
     border-bottom: 1px solid white;
     border-radius: 3px 3px 0 0 !important;
-    box-shadow: 0px 1px white;
+    box-shadow: 0px 1px $color-third;
 }
 
 .row {

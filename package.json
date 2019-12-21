@@ -7,7 +7,7 @@
     "sass": "sass --no-source-map src/components:src/components --watch",
     "dev": "webpack -w --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
-    "serve": "http-server -o",
+    "serve": "cd dist && http-server -o",
     "start": "npm-run-all --parallel serve dev sass"
   },
   "repository": {
