@@ -1,6 +1,7 @@
 .slot {
     padding: 10px 0;
     border-top: 1px solid #333;
+    position: relative;
 }
 
 ::slotted(button) {
@@ -11,6 +12,8 @@
     background: transparent;
     cursor: pointer;
     font-family: inherit;
+    position: relative;
+    z-index: 1;
 }
 
 ::slotted(button.btn-active) {
@@ -18,6 +21,7 @@
     border: 1px solid #333;
     border-bottom: 1px solid white;
     border-radius: 3px 3px 0 0 !important;
+    z-index: 2;
 }
 
 .row {
