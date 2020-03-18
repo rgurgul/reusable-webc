@@ -75,7 +75,7 @@ class CourseFooter extends HTMLElement {
         const container = document.createElement('div');
         container.classList.add('courses');
         this.shadowRoot.querySelector('footer').appendChild(container);
-        fetch('https://urgu.pl/api/courses')
+        fetch('https://panel.debugger.pl/api/courses')
             .then((resp) => resp.json())
             .then((resp) => {
                 container.innerHTML = `
