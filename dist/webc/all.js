@@ -256,7 +256,6 @@ class CourseFooter extends HTMLElement {
             color: white;
             padding: 50px;
             background: #555;
-            border-radius: 4px;
             display: flex;
             flex-wrap: wrap;
         }
@@ -463,7 +462,7 @@ customElements.define('ui-radio-group', RadioGroupComponent);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "/* $color-main: #202020; */\n.slot {\n  padding: 10px 0;\n  border-top: 1px solid #333;\n}\n\n::slotted(button) {\n  /* margin: 0 0 -1px; */\n  padding: 5px 6px 2px;\n  font-weight: 600;\n  border: 1px solid transparent;\n  background: transparent;\n  cursor: pointer;\n  font-family: inherit;\n}\n\n::slotted(button.btn-active) {\n  outline: none !important;\n  border: 1px solid #333;\n  border-bottom: 1px solid white;\n  border-radius: 3px 3px 0 0 !important;\n  box-shadow: 0px 1px #fafafa;\n}\n\n.row {\n  padding: 2px;\n}\n\n@media screen and (max-width: 768px) {\n  ::slotted(button) {\n    display: block;\n    border: 1px solid;\n    margin: 10px 0;\n    padding: 10px;\n    background-color: #333;\n    color: white;\n    border-radius: 3px !important;\n  }\n\n  ::slotted(button.btn-active) {\n    border: 1px solid #333;\n    border-radius: 3px !important;\n    background-color: white;\n    color: #333;\n  }\n\n  .slot {\n    border-top: none;\n  }\n}\n", ""]);
+exports.push([module.i, "/* $color-main: #202020; */\n.slot {\n  padding: 10px 0;\n  border-top: 1px solid #333;\n}\n\n::slotted(button) {\n  /* margin: 0 0 -1px; */\n  padding: 5px 6px 2px;\n  font-weight: 600;\n  border: 1px solid transparent;\n  background: transparent;\n  cursor: pointer;\n  font-family: inherit;\n}\n\n::slotted(button.btn-active) {\n  outline: none !important;\n  border: 1px solid #333;\n  border-bottom: 1px solid white;\n  box-shadow: 0px 1px #fafafa;\n}\n\n.row {\n  padding: 2px;\n}\n\n@media screen and (max-width: 768px) {\n  ::slotted(button) {\n    display: block;\n    margin: 10px 0;\n    padding: 10px;\n    background-color: #333;\n    color: white;\n  }\n\n  ::slotted(button.btn-active) {\n    border: none;\n    box-shadow: inset 0 0 0 1px #343a40;\n    background-color: white;\n    color: #333;\n  }\n\n  .slot {\n    border-top: none;\n  }\n}\n", ""]);
 
 
 /***/ }),
@@ -477,7 +476,7 @@ exports.push([module.i, "/* $color-main: #202020; */\n.slot {\n  padding: 10px 0
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block;\n  margin: 5px 0;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n  outline: none !important;\n  color: white !important;\n  box-shadow: inset 0 0 0 1px #343a40;\n  border-radius: 3px;\n  font-family: inherit;\n}\n@media (max-width: 768px) {\n  ::slotted(button) {\n    margin: 10px;\n    padding: 10px;\n  }\n}\n\n::slotted(button.btn-active) {\n  background-color: white !important;\n  color: #333 !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
+exports.push([module.i, ".slot {\n  margin: 0 20px;\n  padding: 20px;\n}\n\n::slotted(button) {\n  display: block;\n  margin: 5px 0;\n  cursor: pointer;\n  background: #333;\n  color: white;\n  border: none;\n  padding: 5px 10px;\n  outline: none !important;\n  color: white !important;\n  box-shadow: inset 0 0 0 1px #343a40;\n  font-family: inherit;\n}\n@media (max-width: 768px) {\n  ::slotted(button) {\n    margin: 10px;\n    padding: 10px;\n  }\n}\n\n::slotted(button.btn-active) {\n  background-color: white !important;\n  color: #333 !important;\n}\n\n.row {\n  display: inline-flex;\n}\n", ""]);
 
 
 /***/ }),
@@ -579,7 +578,7 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ":host .watch-box {\n  display: inline-block;\n  transform-origin: 0 0;\n  /* transform: skew(0deg, 7deg); */\n}\n:host .watch-box .binary {\n  cursor: pointer;\n}\n:host .watch-box .binary table {\n  display: inline;\n  margin-right: 3px;\n}\n:host .watch-box .binary table td {\n  width: 15px;\n  height: 15px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-sizing: border-box;\n  border-radius: 2px;\n}\n:host .watch-box .binary table .active {\n  background-color: rgba(0, 0, 0, 0.2);\n}\n:host .watch-box .time {\n  font-size: 28px;\n}\n:host .watch-box.hid span {\n  display: none;\n}\n\nui-watch .watch-box {\n  display: inline-block;\n  transform-origin: 0 0;\n  /* transform: skew(0deg, 7deg); */\n}\nui-watch .watch-box .binary {\n  cursor: pointer;\n}\nui-watch .watch-box .binary table {\n  display: inline;\n  margin-right: 3px;\n}\nui-watch .watch-box .binary table td {\n  width: 15px;\n  height: 15px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-sizing: border-box;\n  border-radius: 2px;\n}\nui-watch .watch-box .binary table .active {\n  background-color: rgba(0, 0, 0, 0.2);\n}\nui-watch .watch-box .time {\n  font-size: 28px;\n}\nui-watch .watch-box.hid span {\n  display: none;\n}\n", ""]);
+exports.push([module.i, ":host .watch-box {\n  display: inline-block;\n  transform-origin: 0 0;\n  /* transform: skew(0deg, 7deg); */\n}\n:host .watch-box .binary {\n  cursor: pointer;\n}\n:host .watch-box .binary table {\n  display: inline;\n  margin-right: 3px;\n}\n:host .watch-box .binary table td {\n  width: 15px;\n  height: 15px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-sizing: border-box;\n}\n:host .watch-box .binary table .active {\n  background-color: rgba(0, 0, 0, 0.2);\n}\n:host .watch-box .time {\n  font-size: 28px;\n}\n:host .watch-box.hid span {\n  display: none;\n}\n\nui-watch .watch-box {\n  display: inline-block;\n  transform-origin: 0 0;\n  /* transform: skew(0deg, 7deg); */\n}\nui-watch .watch-box .binary {\n  cursor: pointer;\n}\nui-watch .watch-box .binary table {\n  display: inline;\n  margin-right: 3px;\n}\nui-watch .watch-box .binary table td {\n  width: 15px;\n  height: 15px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-sizing: border-box;\n}\nui-watch .watch-box .binary table .active {\n  background-color: rgba(0, 0, 0, 0.2);\n}\nui-watch .watch-box .time {\n  font-size: 28px;\n}\nui-watch .watch-box.hid span {\n  display: none;\n}\n", ""]);
 
 
 /***/ }),
