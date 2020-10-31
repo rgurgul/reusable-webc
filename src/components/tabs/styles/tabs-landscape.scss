@@ -13,6 +13,7 @@
     background: transparent;
     cursor: pointer;
     font-family: inherit;
+    font-weight: bold;
 }
 
 ::slotted(button.btn-active) {
@@ -31,14 +32,15 @@
         display: block;
         margin: 10px 0;
         padding: 10px;
-        background-color: #333;
-        color: white;
-    }
-    ::slotted(button.btn-active) {
         border: none;
         box-shadow: inset 0 0 0 1px #343a40;
         background-color: white;
         color: #333;
+    }
+    ::slotted(button.btn-active) {
+
+        background-color: #333;
+        color: white;
     }
     .slot {
         border-top: none;

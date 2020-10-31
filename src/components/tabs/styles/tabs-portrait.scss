@@ -6,24 +6,27 @@
 ::slotted(button) {
     display: block;
     margin: 5px 0;
+    font-weight: bold;
     cursor: pointer;
     background: #333;
     color: white;
     border: none;
     padding: 5px 10px;
     outline: none !important;
-    color: white !important;
     box-shadow: inset 0 0 0 1px #343a40;
+    background-color: white !important;
+    color: #333 !important;
     font-family: inherit;
+
     @media (max-width: 768px) {
-      margin: 10px;
-      padding: 10px;
+        margin: 10px;
+        padding: 10px;
     }
 }
 
 ::slotted(button.btn-active) {
-    background-color: white !important;
-    color: #333 !important;
+    color: white !important;
+    background-color: black !important;
 }
 
 .row {
