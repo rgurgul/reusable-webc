@@ -17,10 +17,17 @@ module.exports = {
             './src/components/radio-group/radio-group.js'
         ]
     },
+    experiments: {
+        outputModule: true,
+    },
     output: {
-        path: __dirname + '/dist/webc',
-        publicPath: '/dist/webc',
-        filename: '[name].js'
+        path: __dirname + '/dist',
+        publicPath: '/dist',
+        filename: '[name].js',
+        library: {
+            // do not specify a `name` here
+            type: 'module',
+        },
     },
     devtool: 'source-map',
     module: {
