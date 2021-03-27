@@ -1,0 +1,10 @@
+{
+  "name": "reusable-webc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "all.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "Robert Gurgul",
+  "license": "ISC"
+}
