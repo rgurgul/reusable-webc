@@ -7,7 +7,7 @@
     "sass": "sass --no-source-map src/components:src/components --watch",
     "dev": "webpack -w --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
-    "serve": "cd dist && http-server -o",
+    "serve": "webpack serve --open",
     "start": "npm-run-all --parallel serve dev sass"
   },
   "repository": {
@@ -24,9 +24,10 @@
   "author": "Robert Gurgul",
   "license": "ISC",
   "devDependencies": {
-    "html-loader": "^0.5.5",
+    "css-loader": "^3.2.0",
+    "html-loader": "^2.1.2",
     "http-server": "^0.11.1",
-    "css-loader": "^3.2.0"
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "debugger-look": "^1.0.9",

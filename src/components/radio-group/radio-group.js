@@ -18,14 +18,14 @@ class RadioGroupComponent extends HTMLElement {
                         <div class="label">${this.label}*</div>
                         <div>
                         ${JSON.parse(this.list).map((opt) => {
-                            return `
+            return `
                                     <label class="link">
                                         <input type="radio" required
                                             value="${opt}"
                                             name="${this.id}">
                                         ${opt}
                                     </label>`
-                        }).join('')}
+        }).join('')}
                         </div>
                 </div>`;
         this.appendChild(content)

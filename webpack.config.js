@@ -39,6 +39,10 @@ module.exports = {
             {
                 test: /\.css$/i,
                 loader: 'css-loader'
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
             }
         ]
     }
