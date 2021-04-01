@@ -1,4 +1,4 @@
 node_modules
 package-lock.json
 src/components/**/*.css
-dist/*.[js,js.map]
+dist/*[.js,.js.map]
