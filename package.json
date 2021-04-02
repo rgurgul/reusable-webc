@@ -8,7 +8,7 @@
     "dev": "webpack -w --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
     "serve": "webpack serve --open",
-    "start": "npm-run-all --parallel serve dev sass"
+    "start": "npm-run-all --parallel dev sass serve"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "css-loader": "^3.2.0",
     "html-loader": "^2.1.2",
-    "http-server": "^0.11.1",
+    "http-server": "^0.12.3",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
