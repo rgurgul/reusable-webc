@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --no-source-map src/components:src/components --watch",
-    "dev": "webpack -w --mode development --config webpack.config.js",
-    "build": "webpack --mode production --config webpack.config.js",
+    "dev": "webpack -w --mode development",
+    "sass-build": "sass --no-source-map src/components:src/components",
+    "prod": "webpack --mode production",
+    "build": "npm-run-all --parallel sass-build prod",
     "serve": "webpack serve --open",
     "start": "npm-run-all --parallel dev sass serve"
   },
