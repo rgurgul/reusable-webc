@@ -14,9 +14,10 @@ class WatchComponent extends HTMLElement {
     async connectedCallback() {
         this.root = this.attachShadow({ mode: 'open' });
 
-        const style = document.createElement('style')
+        const style = document.createElement('style');
         style.textContent = require('./watch.css').toString();
         this.root.appendChild(style);
+
 
         const tpl = await Helpers.getHtmlTmpl(tplWatch);
         this.root.appendChild(tpl.content.cloneNode(true));
