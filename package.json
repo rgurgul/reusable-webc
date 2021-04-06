@@ -9,7 +9,7 @@
     "sass-build": "sass --no-source-map src/components:src/components",
     "prod": "webpack --mode production",
     "build": "npm-run-all --parallel sass-build prod",
-    "serve": "webpack serve --open",
+    "serve": "webpack serve --open --port 7171",
     "start": "npm-run-all --parallel dev sass serve"
   },
   "repository": {

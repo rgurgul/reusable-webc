@@ -3,6 +3,14 @@ import tplWatch from './watch.html';
 
 class WatchComponent extends HTMLElement {
 
+    static get observedAttributes() {
+        return ['preview'];
+    }
+
+    attributeChangedCallback(name, oldVal, newVal) {
+        this[name] = newVal;
+    }
+
     async connectedCallback() {
         this.root = this.attachShadow({ mode: 'open' });
 
@@ -20,6 +28,7 @@ class WatchComponent extends HTMLElement {
         setInterval(this.setTime.bind(this), 1000);
         this.setTime();
         this.addEventListener('click', () => this.box.classList.toggle('hid'));
+        this.preview && this.box.classList.toggle('hid', false);
     }
 
     createTable(t, classNr) {
