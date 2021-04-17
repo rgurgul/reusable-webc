@@ -25,7 +25,6 @@ module.exports = {
         publicPath: '/dist',
         filename: '[name].js',
         library: {
-            // do not specify a `name` here
             type: 'module',
         },
     },

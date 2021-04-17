@@ -20,10 +20,13 @@ $c: #333;
 
 ::slotted(button.btn-active) {
     outline: none !important;
-    border: 1px solid $c;
+    border: 3px solid $c;
     border-bottom: 1px solid white;
-    box-shadow: 0px 1px $color-third,
-        inset 0px -3px 6px 0px white;
+    box-shadow: 0px 3px $color-third, inset 0px -3px 6px 0px white;
+}
+
+::slotted(button:focus) {
+    outline: none !important;
 }
 
 .row {
@@ -36,14 +39,22 @@ $c: #333;
         margin: 10px 0;
         padding: 10px;
         border: none;
-        box-shadow: inset 0 0 0 1px $c;
-        background-color: white;
+        box-shadow: inset 0px 0px 0px 1px black;
     }
+
+    ::slotted(button:hover) {
+        box-shadow: inset 0px 0px 0px 3px silver;
+    }
+
+    ::slotted(button:focus) {
+        outline: none;
+    }
+
     ::slotted(button.btn-active) {
-        background-color: #eaeaea;
+        box-shadow: inset 0px 0px 0px 3px black;
         border: none;
-        box-shadow: inset 0 0 0 1px $c;
     }
+
     .slot {
         border-top: none;
     }

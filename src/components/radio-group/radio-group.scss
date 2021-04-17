@@ -16,9 +16,14 @@
     pointer-events: none;
     padding: 0;
   }
-  .btn-active {
-    background-color: #343a40;
-    color: white;
+  .link {
+    &:hover {
+      box-shadow: inset 0px 0px 0px 3px silver;
+    }
+
+    &.btn-active {
+      box-shadow: inset 0px 0px 0px 3px black;
+    }
   }
 }
 
