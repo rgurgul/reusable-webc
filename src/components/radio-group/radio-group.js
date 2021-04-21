@@ -22,9 +22,7 @@ class RadioGroupComponent extends HTMLElement {
                                     <label class="link">
                                         <input type="radio" required
                                             value="${opt}"
-                                            name="${this.id}">
-                                        ${opt}
-                                    </label>`
+                                            name="${this.id}">${opt}</label>`
         }).join('')}
                         </div>
                 </div>`;
