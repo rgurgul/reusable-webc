@@ -2,27 +2,33 @@
   .watch-box {
     display: inline-block;
     transform-origin: 0 0;
+
     /* transform: skew(0deg, 7deg); */
     .binary {
       cursor: pointer;
+
       table {
         display: inline;
         margin-right: 3px;
+
         td {
-          $w: 15px;
-          width: $w;
-          height: $w;
-          border: 1px solid rgba(black, .1);
-          box-sizing: border-box;
+
+          padding: 3px 7px;
+          box-shadow: inset 0 0 1px 1px silver;
+
+          text-align: center;
         }
+
         .active {
-          background-color: rgba(black, .2);
+          box-shadow: inset 0 0 1px 1px black;
         }
       }
     }
+
     .time {
       font-size: 28px;
     }
+
     &.hid span {
       display: none;
     }
