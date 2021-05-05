@@ -25,11 +25,15 @@ $w: 2.5px;
     outline: none !important;
     position: relative;
     bottom: -1px;
-    background-color: var(--bg);
+    background-color: white;
     border: $w solid $c;
     border-bottom: none;
     //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
     z-index: 1;
+}
+
+:host(:hover) ::slotted(button) {
+    background-color: var(--bg);
 }
 
 ::slotted(button:focus) {
