@@ -24,10 +24,11 @@ $w: 2.5px;
 ::slotted(button.btn-active) {
     outline: none !important;
     position: relative;
-    background-color: white;
+    bottom: -1px;
+    background-color: var(--bg);
     border: $w solid $c;
-    border-bottom: 1px solid white;
-    box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
+    border-bottom: none;
+    //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
     z-index: 1;
 }
 

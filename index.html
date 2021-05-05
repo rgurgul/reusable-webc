@@ -11,10 +11,14 @@
             font-family: monospace;
             font-size: 14px;
         }
+
+        :root {
+            --bg: #eaeaea;
+        }
     </style>
 </head>
 
-<body>
+<body style="background-color: var(--bg);">
 
     <h1>｢ Reusable Web Components ｣</h1>
 
@@ -43,8 +47,8 @@
     <fieldset>
         <legend>Tabs Component</legend>
 
-        <div style="display: inline-flex;">
-            <div>
+        <div style="display: flex;">
+            <div style="width: 50%;">
                 <ui-tabs>
                     <ui-tab tab-name='youtube' visible="true">
                         youtube description
