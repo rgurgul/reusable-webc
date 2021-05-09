@@ -88,10 +88,20 @@
         <course-footer courses></course-footer>
     </fieldset>
 
+    <hr>
+    <ui-words-cloud></ui-words-cloud>
+
     <script src="dist/all.js"></script>
 
     <script>
         document.querySelector('#participantsCount').addEventListener('CHANGED', ({ detail }) => console.log(detail))
+
+        const words = [
+            ['Prelekcje', 'Konsultacje', 'Szkolenia', 'Warsztaty'],
+            ['Linux', 'JavaScript', 'Node.js', 'React', 'Angular']
+        ];
+        const el = document.querySelector('ui-words-cloud')
+        el.render(words);
     </script>
 
 </body>

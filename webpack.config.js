@@ -13,6 +13,9 @@ module.exports = {
         watch: [
             './src/components/watch/watch.js'
         ],
+        wordscloud: [
+            './src/components/words-cloud/words-cloud.js'
+        ],
         radio: [
             './src/components/radio-group/radio-group.js'
         ]
