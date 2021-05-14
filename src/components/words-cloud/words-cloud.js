@@ -35,10 +35,8 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
     render([arr1, arr2]) {
         const data = [...arr1, ...arr2];
         data.forEach((el, idx) => {
-            const range = this.parentElement.clientWidth / (data.length - (idx));
-            console.log(range);
             const [left, top] = [
-                Math.abs(Math.random() * range),
+                this.parentElement.clientWidth / 2 + (idx * 30 + 1) * (Math.random() - .5),
                 idx * (idx * 3)
             ];
             this.content.insertAdjacentHTML('beforeend', `
