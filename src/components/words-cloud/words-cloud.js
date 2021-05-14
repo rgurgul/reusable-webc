@@ -14,6 +14,8 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
                 text-shadow: 2px 2px 0px var(--color, black);
                 color: rgba(255,255,255, 0.1);
                 opacity: .85;
+                left: var(--left);
+                top: var(--top);
             }
             .el:before {
                 content: '';
@@ -33,8 +35,10 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
     render([arr1, arr2]) {
         const data = [...arr1, ...arr2];
         data.forEach((el, idx) => {
+            const range = this.parentElement.clientWidth / (data.length - (idx));
+            console.log(range);
             const [left, top] = [
-                Math.random() * Math.abs(innerWidth / 4),
+                Math.abs(Math.random() * range),
                 idx * (idx * 3)
             ];
             this.content.insertAdjacentHTML('beforeend', `
@@ -42,10 +46,10 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
                 class='el'
                 data-before='${idx % 2 === 0 ? '●' : '■'}'
                 style="
-                    top:${top}px;
-                    left: ${left}px;
                     --color:${idx < 4 ? '#CD5561' : '#7A94C0'};
                     --size:${(idx + 1.5) / 1.5}em;
+                    --top:${top}px;
+                    --left:${left}px;
                     --size-sm:${(idx + 1.5) / 3}em"
                 >${el}
             </div>`)
