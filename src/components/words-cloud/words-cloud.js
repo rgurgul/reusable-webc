@@ -30,6 +30,7 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
                 }
             }`;
         this.shadowRoot.appendChild(style);
+        this.dispatchEvent(new CustomEvent('ready'));
     }
 
     render([arr1, arr2]) {
