@@ -17,6 +17,24 @@
         :root {
             --bg: #eaeaea;
         }
+
+        .in {
+            border: 2px solid;
+            width: 200px;
+        }
+
+        @media (min-width:768px) {
+            .in {
+                width: 300px;
+            }
+        }
+
+        @media (max-width:768px) {
+            .in {
+                border: 2px solid red;
+                width: 10px !important;
+            }
+        }
     </style>
 </head>
 
@@ -92,12 +110,10 @@
 
     <hr>
 
-    <div style="width:300px; font-family: serif;">
+    <div class="in">
         <ui-words-cloud></ui-words-cloud>
     </div>
-
     <script src="dist/all.js"></script>
-
     <script>
         document.querySelector('#participantsCount').addEventListener('CHANGED', ({ detail }) => console.log(detail))
 
@@ -106,8 +122,12 @@
             ['Linux', 'JavaScript', 'Node.js', 'React', 'Angular']
         ];
         const el = document.querySelector('ui-words-cloud')
-        el.render(words);
+        el.render
+            ? el.render(words)
+            : el.addEventListener('ready', () => el.render(words));
+
     </script>
+
 
 </body>
 
