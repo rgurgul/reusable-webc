@@ -1,4 +1,9 @@
 customElements.define('ui-words-cloud', class extends HTMLElement {
+
+    static get observedAttributes() {
+        return ['color1', 'color2'];
+    }
+
     constructor() {
         super();
         this.attachShadow({ mode: 'open' })
@@ -33,6 +38,10 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
         this.dispatchEvent(new CustomEvent('ready'));
     }
 
+    attributeChangedCallback(name, oldVal, newVal) {
+        this[name] = newVal;
+    }
+
     render([arr1, arr2]) {
         const data = [...arr1, ...arr2];
         data.forEach((el, idx) => {
@@ -45,7 +54,7 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
                 class='el'
                 data-before='${idx % 2 === 0 ? '●' : '■'}'
                 style="
-                    --color:${idx < 4 ? '#CD5561' : '#7A94C0'};
+                    --color:${idx < arr1.length ? this.color1 : this.color2};
                     --size:${(idx + 1.5) / 1.5}em;
                     --top:${top}px;
                     --left:${left}px;
