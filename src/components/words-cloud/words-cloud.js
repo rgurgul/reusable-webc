@@ -11,6 +11,7 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
         this.content.style.position = 'relative';
         this.shadowRoot.appendChild(this.content)
         const style = document.createElement('style');
+        this.attrs = {};
         style.textContent = `
             .el {
                 position: absolute;
@@ -39,7 +40,8 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
-        this[name] = newVal;
+        this.attrs[name] = newVal;
+        this.dispatchEvent(new CustomEvent('ready'));
     }
 
     render([arr1, arr2]) {
@@ -54,7 +56,7 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
                 class='el'
                 data-before='${idx % 2 === 0 ? '●' : '■'}'
                 style="
-                    --color:${idx < arr1.length ? this.color1 : this.color2};
+                    --color:${idx < arr1.length ? this.attrs.color1 : this.attrs.color2};
                     --size:${(idx + 1.5) / 1.5}em;
                     --top:${top}px;
                     --left:${left}px;
