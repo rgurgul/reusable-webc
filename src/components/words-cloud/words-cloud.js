@@ -1,4 +1,4 @@
-customElements.define('ui-words-cloud', class extends HTMLElement {
+customElements.define('ui-words-cloud', class WordsCloud extends HTMLElement {
 
     static get observedAttributes() {
         return ['color1', 'color2'];
@@ -41,7 +41,8 @@ customElements.define('ui-words-cloud', class extends HTMLElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         this.attrs[name] = newVal;
-        this.dispatchEvent(new CustomEvent('ready'));
+        if (Object.keys(this.attrs).length === WordsCloud.observedAttributes.length)
+            this.dispatchEvent(new CustomEvent('ready'));
     }
 
     render([arr1, arr2]) {
