@@ -36,7 +36,6 @@ customElements.define('ui-words-cloud', class WordsCloud extends HTMLElement {
                 }
             }`;
         this.shadowRoot.appendChild(style);
-        this.dispatchEvent(new CustomEvent('ready'));
     }
 
     attributeChangedCallback(name, oldVal, newVal) {
