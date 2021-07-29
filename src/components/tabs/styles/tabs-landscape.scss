@@ -26,7 +26,7 @@ $w: 1px;
     position: relative;
     bottom: -$w;
     background-color: white;
-    border: $w*2 groove silver;
+    border: $w*2 groove #777;
     border-bottom: none;
     //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
     z-index: 1;
@@ -50,11 +50,11 @@ $w: 1px;
         margin-bottom: 10px;
         padding: 10px;
         border: none;
-        border: $w*2 groove silver;
+        border: $w*2 groove #777;
     }
 
     ::slotted(button:hover) {
-        border: $w*2 groove silver;
+        border: $w*2 groove #777;
     }
 
     ::slotted(button:focus) {
@@ -62,7 +62,7 @@ $w: 1px;
     }
 
     ::slotted(button.btn-active) {
-        border: $w*2 groove silver;
+        border: $w*2 groove #777;
         bottom: 0;
     }
 
