@@ -9,8 +9,9 @@
     font-size: 14px;
     margin-bottom: 4px;
     position: relative;
+    border: 2px groove transparent;
   }
-  input[type=radio] {
+  input[type="radio"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
@@ -18,11 +19,11 @@
   }
   .link {
     &:hover {
-      box-shadow: inset 0px 0px 0px 2.5px silver;
+      border: 2px groove #777;
     }
 
     &.btn-active {
-      box-shadow: inset 0px 0px 0px 2.5px black;
+      border: 2px groove #777;
     }
   }
 }
