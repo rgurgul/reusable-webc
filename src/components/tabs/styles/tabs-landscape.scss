@@ -1,20 +1,20 @@
 @import "./../../../../node_modules/debugger-look/src/variables";
 
 $c: #333;
-$w: 2.5px;
+$w: 1px;
 
 .slot {
     padding-top: 10px;
     border-top: $w solid $c;
     position: relative;
-    top: -2px;
+    top: -$w;
 }
 
 ::slotted(button) {
     /* margin: 0 0 -1px; */
     padding: 8px 10px 6px;
     font-weight: 600;
-    border: 1px solid transparent;
+    border: $w solid transparent;
     background: transparent;
     cursor: pointer;
     font-family: inherit;
@@ -24,9 +24,9 @@ $w: 2.5px;
 ::slotted(button.btn-active) {
     outline: none !important;
     position: relative;
-    bottom: -1px;
+    bottom: -$w;
     background-color: white;
-    border: $w solid $c;
+    border: $w*2 groove silver;
     border-bottom: none;
     //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
     z-index: 1;
@@ -41,7 +41,7 @@ $w: 2.5px;
 }
 
 .row {
-    padding: 2px;
+    padding: 1px;
 }
 
 @media screen and (max-width: 768px) {
@@ -50,11 +50,11 @@ $w: 2.5px;
         margin-bottom: 10px;
         padding: 10px;
         border: none;
-        box-shadow: inset 0px 0px 0px 1px black;
+        border: $w*2 groove silver;
     }
 
     ::slotted(button:hover) {
-        box-shadow: inset 0px 0px 0px $w silver;
+        border: $w*2 groove silver;
     }
 
     ::slotted(button:focus) {
@@ -62,8 +62,8 @@ $w: 2.5px;
     }
 
     ::slotted(button.btn-active) {
-        box-shadow: inset 0px 0px 0px $w black;
-        border: none;
+        border: $w*2 groove black;
+        bottom: 0;
     }
 
     .slot {
