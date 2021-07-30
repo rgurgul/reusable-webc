@@ -4,69 +4,72 @@ $c: #333;
 $w: 1px;
 
 .slot {
-    padding-top: 10px;
-    border-top: $w solid $c;
-    position: relative;
-    top: -$w;
+  padding-top: 10px;
+  border-top: $w solid $c;
+  position: relative;
+  top: -$w;
 }
 
 ::slotted(button) {
-    /* margin: 0 0 -1px; */
-    padding: 8px 10px 6px;
-    font-weight: 600;
-    border: $w solid transparent;
-    background: transparent;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: bold;
+  /* margin: 0 0 -1px; */
+  padding: 8px 10px 6px;
+  font-weight: 600;
+  border: $w solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
 }
 
 ::slotted(button.btn-active) {
-    outline: none !important;
-    position: relative;
-    bottom: -$w;
-    color: white !important;
-    background-color: black !important;
-    border: none !important;
-    //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
-    z-index: 1;
+  outline: none !important;
+  position: relative;
+  bottom: -$w;
+  background-color: white;
+  border: $w * 2 groove #777;
+  border-bottom: none;
+  //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
+  z-index: 1;
 }
 
 :host(:hover) ::slotted(button) {
-    background-color: var(--bg);
+  background-color: var(--bg);
 }
 
 ::slotted(button:focus) {
-    outline: none !important;
+  outline: none !important;
 }
 
 .row {
-    padding: 1px;
+  padding: 1px;
 }
 
 @media screen and (max-width: 768px) {
-    ::slotted(button) {
-        display: block;
-        margin-bottom: 10px;
-        padding: 10px;
-        border: none;
-        border: $w*2 groove #777;
-    }
+  ::slotted(button) {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border: $w * 2 groove #777;
+  }
 
-    ::slotted(button:hover) {
-        border: $w*2 groove #777;
-    }
+  ::slotted(button:hover) {
+    border: $w * 2 groove #777;
+  }
 
-    ::slotted(button:focus) {
-        outline: none;
-    }
+  ::slotted(button:focus) {
+    outline: none;
+  }
 
-    ::slotted(button.btn-active) {
-        border: $w*2 groove #777;
-        bottom: 0;
-    }
+  ::slotted(button.btn-active) {
+    border: $w * 2 groove #777;
+    bottom: 0;
+    color: white !important;
+    background-color: black !important;
+    border: none !important;
+  }
 
-    .slot {
-        border-top: none;
-    }
+  .slot {
+    border-top: none;
+  }
 }
