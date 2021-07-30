@@ -25,9 +25,9 @@ $w: 1px;
     outline: none !important;
     position: relative;
     bottom: -$w;
-    background-color: white;
-    border: $w*2 groove #777;
-    border-bottom: none;
+    color: white !important;
+    background-color: black !important;
+    border: none !important;
     //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
     z-index: 1;
 }
