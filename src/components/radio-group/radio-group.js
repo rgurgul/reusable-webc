@@ -9,7 +9,7 @@ class RadioGroupComponent extends HTMLElement {
 
     connectedCallback() {
         const style = document.createElement('style')
-        style.textContent = require('./radio-group.css').toString();
+        style.textContent = require('./radio-group.css').default.toString();
         this.appendChild(style);
 
         const content = document.createElement('div')

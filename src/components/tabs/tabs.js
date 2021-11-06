@@ -8,7 +8,7 @@ class UiTabs extends HTMLElement {
 
         const style = document.createElement('style');
         const content = this.hasAttribute('portrait') ? require('./styles/tabs-portrait.css') : require('./styles/tabs-landscape.css')
-        style.textContent = content.toString();
+        style.textContent = content.default.toString();
         root.appendChild(style);
 
         const tpl = await Helpers.getHtmlTmpl(tplTabs);

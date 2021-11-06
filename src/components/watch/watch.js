@@ -15,9 +15,8 @@ class WatchComponent extends HTMLElement {
         this.root = this.attachShadow({ mode: 'open' });
 
         const style = document.createElement('style');
-        style.textContent = require('./watch.css').toString();
+        style.textContent = require('./watch.css').default.toString();
         this.root.appendChild(style);
-
 
         const tpl = await Helpers.getHtmlTmpl(tplWatch);
         this.root.appendChild(tpl.content.cloneNode(true));

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     mode: 'development',
     entry: {
@@ -20,11 +22,14 @@ module.exports = {
             './src/components/radio-group/radio-group.js'
         ]
     },
+    devServer: {
+        static: ".",
+    },
     experiments: {
         outputModule: true,
     },
     output: {
-        path: __dirname + '/dist',
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist',
         filename: '[name].js',
         library: {
@@ -40,11 +45,11 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                loader: 'css-loader'
+                use:  "css-loader"
             },
             {
                 test: /\.html$/i,
-                loader: 'html-loader',
+                use: 'html-loader'
             }
         ]
     }
