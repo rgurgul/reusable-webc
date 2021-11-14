@@ -38,7 +38,7 @@ class CourseFooter extends HTMLElement {
             border: 2px solid slategray;
             border-radius: 2px;
             color: #555;
-            padding: 4px 6px;
+            padding: 2px 6px;
             margin: 0;
             display: inline-block;
         }
