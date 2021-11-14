@@ -11,7 +11,9 @@ class CourseFooter extends HTMLElement {
                 <div class="linkedin">
                     <h3>Podziel się opinią o szkoleniu</h3>
                     <br>
-                    Jeżeli szkolenie było <b>OK</b>, zapraszam Cię do moich kontaktów na
+                    Jeżeli szkolenie było <b>OK</b>,
+                    <br>
+                    zapraszam Cię do moich kontaktów na
                     <a href="https://www.linkedin.com/in/robertgurgul" target="_blank">linkedin</a>
                     <br/>
                     <br/>
@@ -23,21 +25,21 @@ class CourseFooter extends HTMLElement {
         const style = document.createElement('style')
         style.textContent = `
         footer{
-            border: 1px solid #999;
-            color: white;
-            padding: 50px;
-            background: #555;
+            border: 2px solid slategray;
+            border-radius: 4px;
+            padding: 20px;
             display: flex;
             flex-wrap: wrap;
         }
         footer a {
-            color: white;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            border: 1.2px solid;
+            border: 2px solid slategray;
+            border-radius: 2px;
             padding: 4px 6px;
-            line-height: 36px;
+            margin: 0;
+            display: inline-block;
         }
         footer ul {
             margin: 0;
@@ -46,6 +48,7 @@ class CourseFooter extends HTMLElement {
         }
         footer ul li {
             display: inline-block;
+            margin: 4px 2px;
         }
 
         h3 {
@@ -66,7 +69,7 @@ class CourseFooter extends HTMLElement {
                 margin-top: 20px;
             }
         }
-        `
+        `;
         this.shadowRoot.appendChild(style);
     }
 
