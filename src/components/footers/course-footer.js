@@ -30,6 +30,7 @@ class CourseFooter extends HTMLElement {
             padding: 20px;
             display: flex;
             flex-wrap: wrap;
+            background: #eaeaea;
         }
         footer a {
             font-weight: bold;
