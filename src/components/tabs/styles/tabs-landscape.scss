@@ -2,28 +2,28 @@ $c: #333;
 $w: 1px;
 
 .slot {
-  padding-top: 10px;
-  border-top: $w solid $c;
-  position: relative;
-  top: -$w;
+  padding-top: 10px !important;
+  border-top: $w solid $c !important;
+  position: relative !important;
+  top: -$w !important;
 }
 
 ::slotted(button) {
   /* margin: 0 0 -1px; */
   padding: 8px 10px 6px !important;
-  font-weight: 600;
+  font-weight: 600 !important;
   border: $w solid transparent !important;
-  background: transparent;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: bold;
+  background: transparent !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  font-weight: bold !important;
 }
 
 ::slotted(button.btn-active) {
   outline: none !important;
-  position: relative;
-  bottom: -$w;
-  background-color: white;
+  position: relative !important;
+  bottom: -$w !important;
+  background-color: white !important;
   border: $w * 2 groove #777 !important;
   border-bottom: none !important;
   //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
@@ -31,7 +31,7 @@ $w: 1px;
 }
 
 :host(:hover) ::slotted(button) {
-  background-color: var(--bg);
+  background-color: var(--bg) !important;
 }
 
 ::slotted(button:focus) {
@@ -39,13 +39,13 @@ $w: 1px;
 }
 
 .row {
-  padding: 1px;
+  padding: 1px !important;
 }
 
 @media screen and (max-width: 768px) {
   ::slotted(button) {
-    display: block;
-    margin-bottom: 10px;
+    display: block !important;
+    margin-bottom: 10px !important;
     padding: 10px !important;
     border: none !important;
     border: $w * 2 groove #777 !important;
@@ -56,18 +56,18 @@ $w: 1px;
   }
 
   ::slotted(button:focus) {
-    outline: none;
+    outline: none !important;
   }
 
   ::slotted(button.btn-active) {
     border: $w * 2 groove #777 !important;
-    bottom: 0;
+    bottom: 0 !important;
     color: white !important;
     background-color: black !important;
     border: none !important;
   }
 
   .slot {
-    border-top: none;
+    border-top: none !important;
   }
 }
