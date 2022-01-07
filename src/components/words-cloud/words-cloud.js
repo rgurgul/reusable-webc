@@ -15,7 +15,7 @@ customElements.define('ui-words-cloud', class WordsCloud extends HTMLElement {
         style.textContent = `
             .el {
                 position: absolute;
-                font-size: var(--size, 1em);
+                font-size: var(--size, 1rem);
                 font-weight: bold;
                 text-shadow: 2px 2px 0px var(--color, black);
                 color: rgba(255,255,255, 0.1);
@@ -58,10 +58,10 @@ customElements.define('ui-words-cloud', class WordsCloud extends HTMLElement {
                 data-before='${idx % 2 === 0 ? '●' : '■'}'
                 style="
                     --color:${idx < arr1.length ? this.attrs.color1 : this.attrs.color2};
-                    --size:${(idx + 1.5) / 1.5}em;
+                    --size:${(idx + 1.5) / 1.5}rem;
                     --top:${top}px;
                     --left:${left}px;
-                    --size-sm:${(idx + 1.5) / 3}em"
+                    --size-sm:${(idx + 1.5) / 3}rem"
                 >${el}
             </div>`)
         })
