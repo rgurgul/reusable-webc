@@ -2,7 +2,7 @@ customElements.define(
   "ui-words-cloud",
   class WordsCloud extends HTMLElement {
     static get observedAttributes() {
-      return ["color1", "color2", "gap"];
+      return ["color1", "color2"];
     }
 
     constructor() {
@@ -16,7 +16,7 @@ customElements.define(
       style.textContent = `
             .el {
 
-                font-size: var(--size, 1em);
+                font-size: var(--size);
                 font-weight: bold;
                 text-shadow: 3px 3px 0px var(--color, black);
                 color: rgba(255,255,255, 0.1);
@@ -52,10 +52,11 @@ customElements.define(
     render([arr1, arr2]) {
       const data = [...arr1, ...arr2];
       data.forEach((el, idx) => {
-        const [left, height] = [
+        const [left, size, height] = [
           /* this.parentElement.clientWidth / 2 +  */
           Math.abs((idx * 30 + 1) * (Math.random() - 0.5)),
-          (idx * this.attrs.gap) / 5,
+          (idx + 2.5) / 1.5,
+          ((idx + 100))/220,
         ];
         this.wrapper.insertAdjacentHTML(
           "beforeend",
@@ -67,13 +68,12 @@ customElements.define(
                     --color:${
                       idx < arr1.length ? this.attrs.color1 : this.attrs.color2
                     };
-                    --size:${(idx + 1.5) / 1.5}em;
-                    --size-sm:${(idx + 1.5) / 5}em;
-                    --top:${height}px;
+                    --size:${size}em;
+                    --size-sm:${(idx + 2.5) / 5}em;
                     --left:${left}px;
                     --left-sm:${left / 5}px;
-                    --height:${height}px;
-                    --height-sm:${height / 2}px;
+                    --height:${height}em;
+                    --height-sm:${height}em;
                     ";
                 >${el}
             </div>`

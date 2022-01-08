@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reusable Web Components</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;600;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
 
         body {
@@ -20,16 +21,18 @@
 
 
         .in {
-            border: 5px solid;
+            font-family: 'Zilla Slab';
+            border: 1px solid;
             font-size: 20px;
             height: 400px;
+            letter-spacing: -3px;
         }
 
         @media (max-width:768px) {
             .in {
-                font-size: 30px;
+                font-size: 33px;
                 height: 340px;
-                height: 150px;
+
             }
         }
     </style>
@@ -38,7 +41,7 @@
 <body style="background-color: var(--bg);">
 
     <div class="in">
-        <ui-words-cloud color1="#4A568A" color2="#2d3453" gap=40></ui-words-cloud>
+        <ui-words-cloud color1="#4A568A" color2="#2d3453"></ui-words-cloud>
     </div>
 
     <hr>
@@ -118,7 +121,7 @@
         }) => console.log(detail))
 
         const words = [
-            ['', 'konsultacje', 'warsztaty', 'szkolenia', '&nbsp;'],
+            ['Konsultacje', 'Warsztaty', 'Szkolenia', '&nbsp;'],
             ['JavaScript', 'TypeScript', 'Node.js', 'React', 'Angular'],
         ];
         const el = document.querySelector('ui-words-cloud')
