@@ -19,24 +19,28 @@
         }
 
         .in {
-            border: 2px solid;
-        }
-
-        @media (min-width:768px) {
-            .in {
-                font-size: 40px;
-            }
+            border: 5px solid;
+            font-size: 20px;
+            height: 400px;
         }
 
         @media (max-width:768px) {
             .in {
-                border: 2px solid red;
+                /* font-size: 20px;
+                height: 340px; */
+                height: 150px;
             }
         }
     </style>
 </head>
 
 <body style="background-color: var(--bg);">
+
+    <div class="in">
+        <ui-words-cloud color1="#4A568A" color2="#2d3453" gap=40></ui-words-cloud>
+    </div>
+
+    <hr>
 
     <h1>｢ Reusable Web Components ... ｣</h1>
 
@@ -106,24 +110,20 @@
         <course-footer courses></course-footer>
     </fieldset>
 
-    <hr>
-
-    <div class="in">
-        <ui-words-cloud color1='red' color2='yellow'></ui-words-cloud>
-    </div>
     <script src="dist/all.js"></script>
     <script>
-        document.querySelector('#participantsCount').addEventListener('CHANGED', ({ detail }) => console.log(detail))
+        document.querySelector('#participantsCount').addEventListener('CHANGED', ({
+            detail
+        }) => console.log(detail))
 
         const words = [
-            ['Prelekcje', 'Konsultacje', 'Szkolenia', 'Warsztaty'],
-            ['Linux', 'JavaScript', 'Node.js', 'React', 'Angular']
+            ['', 'konsultacje', 'warsztaty', 'szkolenia', '&nbsp;'],
+            ['JavaScript', 'TypeScript', 'Node.js', 'React', 'Angular'],
         ];
         const el = document.querySelector('ui-words-cloud')
-        el.render
-            ? el.render(words)
-            : el.addEventListener('ready', () => el.render(words));
-
+        el.render ?
+            el.render(words) :
+            el.addEventListener('ready', () => el.render(words));
     </script>
 
 
