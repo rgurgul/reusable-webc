@@ -73,7 +73,7 @@ customElements.define(
                     --left:${left}px;
                     --left-sm:${left / 5}px;
                     --height:${height}px;
-                    --height-sm:${height / 3}px;
+                    --height-sm:${height / 2}px;
                     ";
                 >${el}
             </div>`
