@@ -9,7 +9,7 @@ $w: 1px;
 }
 
 ::slotted(button) {
-  /* margin: 0 0 -1px; */
+  margin: 0 0 -1px;
   padding: 8px 10px 6px !important;
   font-weight: 600 !important;
   border: $w solid transparent !important;
@@ -23,12 +23,12 @@ $w: 1px;
   outline: none !important;
   position: relative !important;
   bottom: -$w !important;
-  background-color: white !important;
+  background-color: #fafafa !important;
   border: $w * 2 groove $c !important;
   border-bottom: none !important;
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
-  box-shadow: 0px 10px 10px 0px $c inset;
+  //box-shadow: 0px 10px 10px 0px #fafafa inset;
   //box-shadow: 0px $w $c, inset 0px -$w 6px 0px white;
   z-index: 1;
 }
