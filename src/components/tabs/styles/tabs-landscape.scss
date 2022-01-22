@@ -22,7 +22,7 @@ $w: 1px;
 ::slotted(button.btn-active) {
   outline: none !important;
   position: relative !important;
-  bottom: -$w !important;
+  bottom: -1.3px !important;
   background-color: #fafafa !important;
   border: $w * 2 groove $c !important;
   border-bottom: none !important;
