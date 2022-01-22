@@ -32,7 +32,7 @@ class CourseFooter extends HTMLElement {
             flex-wrap: wrap;
         }
         footer a {
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             border: 2px solid slategray;

@@ -17,7 +17,7 @@ customElements.define(
             .el {
 
                 font-size: var(--size);
-                font-weight: bold;
+                font-weight: 600;
                 text-shadow: 3px 3px 0px var(--color, black);
                 color: rgba(255,255,255, 0.1);
                 opacity: .85;

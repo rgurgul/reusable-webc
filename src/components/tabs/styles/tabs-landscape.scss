@@ -1,9 +1,9 @@
-$c: #333;
+$c: lightgray;
 $w: 1px;
 
 .slot {
   padding-top: 10px !important;
-  border-top: $w solid $c !important;
+  border-top: $w * 2 groove $c !important;
   position: relative !important;
   top: -$w !important;
 }
@@ -16,7 +16,7 @@ $w: 1px;
   background: transparent !important;
   cursor: pointer !important;
   font-family: inherit !important;
-  font-weight: bold !important;
+  font-weight: 600 !important;
 }
 
 ::slotted(button.btn-active) {
@@ -24,8 +24,10 @@ $w: 1px;
   position: relative !important;
   bottom: -$w !important;
   background-color: white !important;
-  border: $w * 2 groove #777 !important;
+  border: $w * 2 groove $c !important;
   border-bottom: none !important;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
   //box-shadow: 0px $w $color-third, inset 0px -$w 6px 0px white;
   z-index: 1;
 }
@@ -46,13 +48,14 @@ $w: 1px;
   ::slotted(button) {
     display: block !important;
     margin-bottom: 10px !important;
-    padding: 10px !important;
+    padding: 5px !important;
     border: none !important;
-    border: $w * 2 groove #777 !important;
+    border-radius: 3px !important;
+    border: $w * 2 groove $c !important;
   }
 
   ::slotted(button:hover) {
-    border: $w * 2 groove #777 !important;
+    border: $w * 2 groove $c !important;
   }
 
   ::slotted(button:focus) {
@@ -60,7 +63,7 @@ $w: 1px;
   }
 
   ::slotted(button.btn-active) {
-    border: $w * 2 groove #777 !important;
+    border: $w * 2 groove $c !important;
     bottom: 0 !important;
     color: white !important;
     background-color: black !important;
