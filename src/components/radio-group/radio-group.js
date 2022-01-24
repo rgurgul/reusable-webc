@@ -19,7 +19,7 @@ class RadioGroupComponent extends HTMLElement {
                         <div>
                         ${JSON.parse(this.list).map((opt) => {
             return `
-                                    <label class="link">
+                                    <label>
                                         <input type="radio" required
                                             value="${opt}"
                                             name="${this.id}">${opt}</label>`

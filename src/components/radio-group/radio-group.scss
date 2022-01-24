@@ -2,18 +2,25 @@
   user-select: none;
 
   .label {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
   }
 
-  label.link {
+  label {
     cursor: pointer;
     display: inline-block;
     padding: 7px 11px;
     font-size: 14px;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
     position: relative;
     border: 2px groove lightgray;
     border-radius: 3px;
+    &:hover {
+      border: 2px groove gray;
+    }
+
+    &.btn-active {
+      background-color: #eaeaea;
+    }
   }
 
   input[type="radio"] {
@@ -23,15 +30,6 @@
     padding: 0;
   }
 
-  .link {
-    &:hover {
-      border: 2px groove gray;
-    }
-
-    &.btn-active {
-      background-color: #eaeaea;
-    }
-  }
 }
 
 :host {
