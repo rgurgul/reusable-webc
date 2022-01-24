@@ -16,7 +16,7 @@ class RadioGroupComponent extends HTMLElement {
         content.innerHTML = `
                 <div>
                         <div class="label">${this.label}*</div>
-                        <div>
+                        <div style="display:inline-flex; flex-wrap: wrap; gap:8px;">
                         ${JSON.parse(this.list).map((opt) => {
             return `
                                     <label>
