@@ -1,9 +1,10 @@
 @mixin radio() {
   user-select: none;
+
   .label {
-    margin-bottom: 8px;
-    font-weight: 600;
+    margin-bottom: 2px;
   }
+
   label.link {
     cursor: pointer;
     display: inline-block;
@@ -14,15 +15,17 @@
     border: 2px groove lightgray;
     border-radius: 3px;
   }
+
   input[type="radio"] {
     position: absolute;
     clip: rect(0, 0, 0, 0);
     pointer-events: none;
     padding: 0;
   }
+
   .link {
     &:hover {
-
+      border: 2px groove gray;
     }
 
     &.btn-active {
