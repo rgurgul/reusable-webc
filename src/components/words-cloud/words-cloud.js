@@ -10,12 +10,12 @@ customElements.define(
       this.attachShadow({ mode: "open" });
       this.wrapper = document.createElement("div");
       this.wrapper.style.position = "relative";
+      this.wrapper.style.marginBottom = '50px';
       this.shadowRoot.appendChild(this.wrapper);
       const style = document.createElement("style");
       this.attrs = {};
       style.textContent = `
             .el {
-
                 font-size: var(--size);
                 font-weight: 600;
                 text-shadow: 3px 3px 0px var(--color, black);
@@ -56,7 +56,7 @@ customElements.define(
           /* this.parentElement.clientWidth / 2 +  */
           Math.abs((idx * 30 + 1) * (Math.random() - 0.5)),
           (idx + 2.5) / 1.5,
-          ((idx + 100))/220,
+          (idx + 100)/220,
         ];
         this.wrapper.insertAdjacentHTML(
           "beforeend",

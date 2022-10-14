@@ -58,8 +58,8 @@ class CourseFooter extends HTMLElement {
             padding:20px;
             margin: 20px 0;
             border-radius: 4px;
-            box-shadow: 0 5px 10px  #eaeaea;
-            background: rgba(0,0,0,.01);
+            box-shadow: 0 5px 10px #eaeaea;
+            background: white;
         }
         .courses {
             flex:1;
@@ -73,7 +73,8 @@ class CourseFooter extends HTMLElement {
             font-weight: bold;
         }
         dd {
-            margin-left: 0;
+            margin-top:10px;
+            margin-left:0;
         }
         @media screen and (max-width: 768px) {
             .flexi {
