@@ -83,6 +83,9 @@ class CourseFooter extends HTMLElement {
             footer {
                 flex-direction: column;
             }
+            footer a {
+              line-height: 1em;
+            }
             .linkedin, .list {
                 flex-basis: auto;
                 margin-top: 20px;
